@@ -653,14 +653,12 @@ section{padding:2rem 0}
 <!-- NAV -->
 <nav class="nav-pills">
   <a class="nav-pill" href="#intro">📝 確定申告とは</a>
-  <a class="nav-pill" href="#glossary">📖 用語集</a>
-  <a class="nav-pill" href="#prep">📦 準備するもの</a>
-  <a class="nav-pill" href="#checklist">✅ チェックリスト</a>
-  <a class="nav-pill" href="#quiz">🧠 経費クイズ</a>
-  <a class="nav-pill" href="#mistakes">⚠️ 失敗集</a>
+  <a class="nav-pill" href="#route">🤔 事業or雑</a>
+  <a class="nav-pill" href="#prep">📦 準備</a>
   <a class="nav-pill" href="#bookkeeping">📒 決算書</a>
-  <a class="nav-pill" href="#tools">🔧 ツール</a>
+  <a class="nav-pill" href="#formmap">📄 申告書</a>
   <a class="nav-pill" href="#etax">🖥 作成コーナー</a>
+  <a class="nav-pill" href="#ref-section">📚 参考</a>
 </nav>
 
 <div class="container">
@@ -785,60 +783,12 @@ section{padding:2rem 0}
   </div>
 </section>
 
-<!-- ===== SECTION: 用語集 ===== -->
-<section id="glossary" class="fade-up">
-  <div class="section-title">📖 用語ミニ辞典</div>
-  <div class="section-sub">わからない言葉があったらここで確認</div>
+<!-- ===== SECTION: 事業 or 雑 ===== -->
+<section id="route" class="fade-up">
+  <div class="section-title">🤔 事業所得と雑所得、どっちで出す？</div>
+  <div class="section-sub">業務委託の収入はどちらでも申告できます</div>
 
-  <div class="card" style="padding:0.8rem">
-    <div class="glossary-grid">
-      <div class="glossary-item">
-        <div class="glossary-term">収入 <span class="g-badge g-orange">売上</span></div>
-        <div class="glossary-def">取引先からもらった報酬の<strong>税引前の総額</strong>。振込額ではなく、源泉税を引く前の金額のこと。</div>
-      </div>
-      <div class="glossary-item">
-        <div class="glossary-term">経費</div>
-        <div class="glossary-def">仕事のために使ったお金。交通費・用具代・通信費など。<strong>収入から差し引いて所得を減らせる</strong>。</div>
-      </div>
-      <div class="glossary-item">
-        <div class="glossary-term">所得 <span class="g-badge g-navy">利益</span></div>
-        <div class="glossary-def"><strong>収入 − 経費 = 所得</strong>。この金額をベースに税金が計算される。会社でいう「利益」に近い。</div>
-      </div>
-      <div class="glossary-item">
-        <div class="glossary-term">所得控除</div>
-        <div class="glossary-def">所得からさらに差し引けるもの。国保・年金・iDeCo・ふるさと納税など。<strong>経費とは入力場所が違う</strong>。</div>
-      </div>
-      <div class="glossary-item">
-        <div class="glossary-term">源泉徴収税 <span class="g-badge g-red">天引き</span></div>
-        <div class="glossary-def">取引先が報酬から天引きして国に先払いしてくれている税金。申告書に書かないと<strong>二重課税</strong>になる。</div>
-      </div>
-      <div class="glossary-item">
-        <div class="glossary-term">確定申告</div>
-        <div class="glossary-def">1年間の収入・経費・控除をまとめて、自分で税金を計算し税務署に報告すること。毎年2〜3月に行う。</div>
-      </div>
-      <div class="glossary-item">
-        <div class="glossary-term">支払調書</div>
-        <div class="glossary-def">取引先が発行する書類。「支払金額」と「源泉徴収税額」が書いてある。届かないこともあるが問題なし。</div>
-      </div>
-      <div class="glossary-item">
-        <div class="glossary-term">収支内訳書</div>
-        <div class="glossary-def">1年間の売上と経費を項目別にまとめた書類。確定申告書と一緒に作る。白色申告で使う。</div>
-      </div>
-      <div class="glossary-item">
-        <div class="glossary-term">家事按分</div>
-        <div class="glossary-def">自宅兼事務所の家賃や通信費を、<strong>仕事で使った割合だけ</strong>経費にすること。全額はNG。</div>
-      </div>
-      <div class="glossary-item">
-        <div class="glossary-term">還付</div>
-        <div class="glossary-def">源泉徴収で払いすぎた税金が<strong>戻ってくる</strong>こと。確定申告をするとわかる。口座に振り込まれる。</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 事業所得 vs 雑所得：かんたん判定 -->
   <div class="card" style="padding:1.2rem">
-    <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.1rem;margin-bottom:0.8rem">🤔 「事業所得」と「雑所得」、どっちで出す？</h3>
-
     <div style="background:var(--bg2);border-radius:var(--radius-sm);padding:0.8rem 1rem;margin-bottom:1rem;font-size:0.88rem;line-height:1.8">
       業務委託の収入は<strong>「事業所得」か「雑所得」</strong>のどちらかで申告します。<br>
       <strong>どちらでも経費は引けるし、税金の計算は同じ。</strong><br>
@@ -967,292 +917,6 @@ section{padding:2rem 0}
   </div>
 </section>
 
-<!-- ===== SECTION: CHECKLIST ===== -->
-<section id="checklist" class="fade-up">
-  <div class="section-title">✅ 4ステップ チェックリスト</div>
-  <div class="section-sub">タップして完了していこう！</div>
-
-  <div class="card" style="padding:0.8rem 0">
-    <div class="progress-bar" style="margin:0 1.2rem"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
-    <div class="progress-text" style="padding:0 1.2rem" id="progressText">0 / 4 完了</div>
-
-    <div class="step-item" onclick="toggleStep(this)" data-step="1">
-      <div class="step-check"></div>
-      <div>
-        <div class="step-num">STEP 1</div>
-        <div class="step-title">💰 収入を入力する</div>
-        <div class="step-desc">支払調書や請求書をもとに、1年間の売上合計を入力。複数社ある場合は合算。<strong>振込額ではなく「税引前の総額」</strong>を入れるのがポイント！</div>
-        <div class="step-docs">
-          <div class="step-docs-label">📎 必要な書類</div>
-          <div class="step-docs-list">
-            <span class="doc-tag">支払調書</span>
-            <span class="doc-tag">請求書の控え / 売上の記録</span>
-            <span class="doc-tag">銀行口座の入金明細</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="step-item" onclick="toggleStep(this)" data-step="2">
-      <div class="step-check"></div>
-      <div>
-        <div class="step-num">STEP 2</div>
-        <div class="step-title">🏦 源泉徴収税を入力する</div>
-        <div class="step-desc">報酬から天引きされた源泉所得税を必ず入力。支払調書の「源泉徴収税額」を確認。</div>
-        <div class="step-warn">⚠️ 入れ忘れると二重課税になります！</div>
-        <div class="step-docs">
-          <div class="step-docs-label">📎 必要な書類</div>
-          <div class="step-docs-list">
-            <span class="doc-tag">支払調書</span>
-            <span class="doc-tag">源泉税の計算メモ</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="step-item" onclick="toggleStep(this)" data-step="3">
-      <div class="step-check"></div>
-      <div>
-        <div class="step-num">STEP 3</div>
-        <div class="step-title">🖥️ 経費を計上する</div>
-        <div class="step-desc">仕事のために使ったお金を経費として計上。入れないと税金を多く払うことに！下の経費クイズもチェック👇</div>
-        <div class="step-docs">
-          <div class="step-docs-label">📎 必要な書類</div>
-          <div class="step-docs-list">
-            <span class="doc-tag">領収書・レシート</span>
-            <span class="doc-tag">クレジットカード明細</span>
-            <span class="doc-tag">車の走行記録・ガソリン代</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="step-item" onclick="toggleStep(this)" data-step="4">
-      <div class="step-check"></div>
-      <div>
-        <div class="step-num">STEP 4</div>
-        <div class="step-title">🛡️ 所得控除を入力する</div>
-        <div class="step-desc">国民健康保険、国民年金、iDeCo、生命保険料控除、基礎控除（48万円）、ふるさと納税（寄附金控除）など。経費とは別の欄で入力。</div>
-        <div class="step-docs">
-          <div class="step-docs-label">📎 必要な書類</div>
-          <div class="step-docs-list">
-            <span class="doc-tag">国保の納付額通知</span>
-            <span class="doc-tag">国民年金の控除証明書</span>
-            <span class="doc-tag">生命保険・iDeCoの控除証明書</span>
-            <span class="doc-tag">ふるさと納税の受領証明書</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SECTION: EXPENSE TABLE + QUIZ ===== -->
-<section id="quiz" class="fade-up">
-  <div class="section-title">🧠 経費の ○ × クイズ</div>
-  <div class="section-sub">タップして正解を確認しよう！</div>
-
-  <!-- 3-column expense reference table -->
-  <div class="card expense-section" style="padding:0;overflow:hidden;margin-bottom:1.5rem">
-    <div class="expense-header">
-      <div class="col-green">🟢 経費</div>
-      <div class="col-blue">🔵 所得控除</div>
-      <div class="col-red">🔴 どちらでもない</div>
-    </div>
-    <div class="expense-columns">
-      <div class="expense-column">
-        <div class="expense-item"><span class="emoji">⚽</span> ボール・コーン・ビブス等</div>
-        <div class="expense-item"><span class="emoji">👟</span> スパイク・トレシュー・ウェア</div>
-        <div class="expense-item"><span class="emoji">🚃</span> 交通費（練習場・試合会場）</div>
-        <div class="expense-item"><span class="emoji">🎓</span> 指導者ライセンス・研修費</div>
-        <div class="expense-item"><span class="emoji">💻</span> PC・タブレット（映像分析用）</div>
-        <div class="expense-item"><span class="emoji">📡</span> 通信費（ネット・携帯按分）</div>
-        <div class="expense-item"><span class="emoji">🏠</span> 家賃・光熱費（按分）</div>
-        <div class="expense-item"><span class="emoji">🚗</span> ガソリン代・駐車場代</div>
-      </div>
-      <div class="expense-column">
-        <div class="expense-item"><span class="emoji">🏥</span> 国民健康保険料</div>
-        <div class="expense-item"><span class="emoji">🏛️</span> 国民年金</div>
-        <div class="expense-item"><span class="emoji">💊</span> 生命保険料</div>
-        <div class="expense-item"><span class="emoji">🏦</span> iDeCo</div>
-        <div class="expense-item"><span class="emoji">🎁</span> ふるさと納税</div>
-        <div class="expense-item"><span class="emoji">🏥</span> 医療費</div>
-      </div>
-      <div class="expense-column">
-        <div class="expense-item"><span class="emoji">🍽️</span> プライベートの食事</div>
-        <div class="expense-item"><span class="emoji">👔</span> 普段着・私服</div>
-        <div class="expense-item"><span class="emoji">🏛️</span> 住民税・所得税</div>
-        <div class="expense-item"><span class="emoji">🚨</span> 罰金・反則金</div>
-        <div class="expense-item"><span class="emoji">👨‍👩‍👧</span> 届出なしの家族給与</div>
-      </div>
-    </div>
-    <div class="expense-note">
-      ★ 家賃・通信費は<strong>「家事按分」</strong>で業務使用割合だけ計上OK。例：携帯代1万円で業務利用50% → 月5,000円が経費<br>
-      ★ 🔵所得控除は経費ではなく、確定申告書の<strong>控除欄</strong>で入力します（引く場所が違う！）
-    </div>
-  </div>
-
-  <!-- Quiz -->
-  <div style="display:flex;flex-direction:column;gap:0.6rem" id="quizArea">
-    <div class="card quiz-card" onclick="toggleQuiz(this)">
-      <div class="quiz-q">
-        <span class="quiz-emoji">❓</span>
-        <span class="quiz-text">練習用に買ったコーンやビブスは経費？</span>
-        <span class="quiz-tap">タップ</span>
-      </div>
-      <div class="quiz-a">
-        <span class="quiz-result ok">🟢 経費OK！</span>
-        <p>指導で使うコーン・ビブス・ボール等の練習用具は「消耗品費」として経費になります。10万円以上の用具は減価償却が必要です。</p>
-      </div>
-    </div>
-
-    <div class="card quiz-card" onclick="toggleQuiz(this)">
-      <div class="quiz-q">
-        <span class="quiz-emoji">❓</span>
-        <span class="quiz-text">国民健康保険料は経費に入れる？</span>
-        <span class="quiz-tap">タップ</span>
-      </div>
-      <div class="quiz-a">
-        <span class="quiz-result deduction">🔵 経費ではなく「所得控除」！</span>
-        <p>国保は<strong>「社会保険料控除」（所得控除）</strong>として申告書の別の欄で入力します。効果は似ていますが、入力場所が違います。経費欄に書かないよう注意！</p>
-      </div>
-    </div>
-
-    <div class="card quiz-card" onclick="toggleQuiz(this)">
-      <div class="quiz-q">
-        <span class="quiz-emoji">❓</span>
-        <span class="quiz-text">保護者との面談で使ったカフェ代は経費？</span>
-        <span class="quiz-tap">タップ</span>
-      </div>
-      <div class="quiz-a">
-        <span class="quiz-result ok">🟢 経費OK！</span>
-        <p>保護者やクラブ関係者との打ち合わせで使ったカフェ代は「会議費」として経費になります。ただしプライベートの飲食はNGです。</p>
-      </div>
-    </div>
-
-    <div class="card quiz-card" onclick="toggleQuiz(this)">
-      <div class="quiz-q">
-        <span class="quiz-emoji">❓</span>
-        <span class="quiz-text">普段も着るトレーニングウェアは経費？</span>
-        <span class="quiz-tap">タップ</span>
-      </div>
-      <div class="quiz-a">
-        <span class="quiz-result ng">🔴 原則NG</span>
-        <p>プライベートでも着られるウェアは原則として経費にできません。ただしチームロゴ入りの<strong>公式ユニフォームや指定ウェア</strong>は経費にできます。</p>
-      </div>
-    </div>
-
-    <div class="card quiz-card" onclick="toggleQuiz(this)">
-      <div class="quiz-q">
-        <span class="quiz-emoji">❓</span>
-        <span class="quiz-text">自分の車のガソリン代は全額経費にできる？</span>
-        <span class="quiz-tap">タップ</span>
-      </div>
-      <div class="quiz-a">
-        <span class="quiz-result partial">△ 一部だけOK</span>
-        <p>練習場や試合会場への移動に使う分だけ「家事按分」として計上できます。<strong>業務で使った走行距離の割合</strong>を記録しておくのがポイント。全額はNGです。</p>
-      </div>
-    </div>
-
-    <div class="card quiz-card" onclick="toggleQuiz(this)">
-      <div class="quiz-q">
-        <span class="quiz-emoji">❓</span>
-        <span class="quiz-text">ふるさと納税は経費？</span>
-        <span class="quiz-tap">タップ</span>
-      </div>
-      <div class="quiz-a">
-        <span class="quiz-result deduction">🔵 経費ではなく「所得控除」！</span>
-        <p>ふるさと納税は<strong>「寄附金控除」（所得控除）</strong>です。確定申告書の控除欄で入力します。ワンストップ特例を使っていた人も、確定申告する場合は改めて申告が必要です。</p>
-      </div>
-    </div>
-
-    <div class="card quiz-card" onclick="toggleQuiz(this)">
-      <div class="quiz-q">
-        <span class="quiz-emoji">❓</span>
-        <span class="quiz-text">指導者ライセンスの取得・更新費用は経費？</span>
-        <span class="quiz-tap">タップ</span>
-      </div>
-      <div class="quiz-a">
-        <span class="quiz-result ok">🟢 経費OK！</span>
-        <p>JFA公認ライセンスの取得費・更新費・講習会の参加費は「研修費」として全額経費にできます。受講のための交通費や宿泊費も経費OK。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ===== SECTION: よくある失敗集 ===== -->
-<section id="mistakes" class="fade-up">
-  <div class="section-title">⚠️ よくある失敗・NG集</div>
-  <div class="section-sub">初心者がやりがちなミスをまとめました</div>
-
-  <div class="mistake-card">
-    <div class="mistake-ng">
-      <span class="mistake-ng-badge">NG</span>
-      <span class="mistake-ng-text">振込額をそのまま「収入」に書いた</span>
-    </div>
-    <div class="mistake-ok">
-      <span class="mistake-ok-badge">正解</span>
-      <span class="mistake-ok-text">振込額は源泉税が引かれた後の金額。確定申告には<strong>税引前の総額（＝請求額）</strong>を入力する。支払調書の「支払金額」欄を確認しよう。</span>
-    </div>
-  </div>
-
-  <div class="mistake-card">
-    <div class="mistake-ng">
-      <span class="mistake-ng-badge">NG</span>
-      <span class="mistake-ng-text">源泉徴収税額の入力を忘れた</span>
-    </div>
-    <div class="mistake-ok">
-      <span class="mistake-ok-badge">正解</span>
-      <span class="mistake-ok-text">源泉税を入力しないと<strong>二重課税</strong>になり、本来還付されるお金が戻ってこない。申告書の(48)欄に必ず入力。</span>
-    </div>
-  </div>
-
-  <div class="mistake-card">
-    <div class="mistake-ng">
-      <span class="mistake-ng-badge">NG</span>
-      <span class="mistake-ng-text">国保・年金を「経費」欄に書いた</span>
-    </div>
-    <div class="mistake-ok">
-      <span class="mistake-ok-badge">正解</span>
-      <span class="mistake-ok-text">国保・年金は経費ではなく<strong>「所得控除」</strong>。確定申告書の控除欄で入力する。入力場所が違うだけで、税金を減らす効果は同じ。</span>
-    </div>
-  </div>
-
-  <div class="mistake-card">
-    <div class="mistake-ng">
-      <span class="mistake-ng-badge">NG</span>
-      <span class="mistake-ng-text">家賃を全額「経費」にした</span>
-    </div>
-    <div class="mistake-ok">
-      <span class="mistake-ok-badge">正解</span>
-      <span class="mistake-ok-text">自宅兼事務所の場合は<strong>「家事按分」</strong>が必要。仕事で使う面積や時間の割合だけが経費になる。全額は税務署に否認されるリスクあり。</span>
-    </div>
-  </div>
-
-  <div class="mistake-card">
-    <div class="mistake-ng">
-      <span class="mistake-ng-badge">NG</span>
-      <span class="mistake-ng-text">ふるさと納税のワンストップ特例のまま確定申告した</span>
-    </div>
-    <div class="mistake-ok">
-      <span class="mistake-ok-badge">正解</span>
-      <span class="mistake-ok-text">確定申告するとワンストップ特例は<strong>無効</strong>になる。改めて<strong>寄附金控除</strong>として申告が必要。忘れると控除がゼロになる。</span>
-    </div>
-  </div>
-
-  <div class="mistake-card">
-    <div class="mistake-ng">
-      <span class="mistake-ng-badge">NG</span>
-      <span class="mistake-ng-text">領収書を捨ててしまった</span>
-    </div>
-    <div class="mistake-ok">
-      <span class="mistake-ok-badge">正解</span>
-      <span class="mistake-ok-text">白色申告でも<strong>5年間の保存義務</strong>がある。税務調査で求められることも。年ごとにファイルにまとめて保管しておこう。</span>
-    </div>
-  </div>
-</section>
-
 <!-- ===== SECTION: 決算書（事業所得の人向け）===== -->
 <section id="bookkeeping" class="fade-up">
   <div class="section-title">📒 決算書を作ろう（事業所得の人）</div>
@@ -1316,85 +980,6 @@ section{padding:2rem 0}
   </div>
 </section>
 
-<!-- ===== SECTION: 便利ツール ===== -->
-<section id="tools" class="fade-up">
-  <div class="section-title">🔧 便利ツール</div>
-  <div class="section-sub">申告書作成のおともに</div>
-
-  <!-- 源泉税逆算ツール -->
-  <div class="tool-card">
-    <h3>🧮 源泉税の逆算ツール</h3>
-
-    <div class="tool-guide">
-      <strong>まず確認！このツールが必要なケース：</strong>
-      <div class="tool-branch">
-        <div class="tool-branch-item has-doc">
-          <strong>✅ 支払調書がある</strong><br>
-          →「支払金額」と「源泉徴収税額」がそのまま書いてあるので、<strong>このツールは不要</strong>。そのまま転記すればOK。
-        </div>
-        <div class="tool-branch-item no-doc">
-          <strong>⚠️ 振込額（手取り）しかわからない</strong><br>
-          → 振込額は源泉税が引かれた後の金額。税引前の請求額に戻す必要がある。<strong>↓ このツールで逆算できます</strong>。
-        </div>
-      </div>
-
-      <strong>「税込」と「税抜」の違い：</strong><br>
-      源泉税の計算方法は、請求書に消費税を分けて書いたかどうかで変わります。<br>
-      ・<strong>税込に対して源泉徴収</strong> → 請求書に消費税を分けて書いていない場合（総額に10.21%）<br>
-      ・<strong>税抜に対して源泉徴収</strong> → 請求書に消費税を明確に分けて書いている場合（税抜額に10.21%）こちらが一般的<br>
-      <span style="font-size:0.8rem;color:var(--text-muted)">※ 迷ったら自分の請求書を確認してみてください</span>
-    </div>
-
-    <div class="tool-radio-group">
-      <div class="tool-radio active" onclick="setWithholdingMode('excluded')">税抜に対して源泉<br><span style="font-size:0.7rem;font-weight:400">（一般的）</span></div>
-      <div class="tool-radio" onclick="setWithholdingMode('included')">税込に対して源泉</div>
-    </div>
-
-    <div class="tool-input-group">
-      <label>💴 振込額（手取り金額）</label>
-      <input type="text" class="tool-input" id="withholdingInput" placeholder="例: 90790" inputmode="numeric">
-    </div>
-
-    <button class="tool-btn" onclick="calcWithholding()">逆算する</button>
-
-    <div class="tool-result" id="withholdingResult">
-    </div>
-  </div>
-
-  <!-- 家事按分計算 -->
-  <div class="tool-card">
-    <h3>🏠 家事按分かんたん計算</h3>
-    <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:1rem">
-      月額と業務使用率から、年間の経費額をサクッと計算できます。
-    </p>
-
-    <div class="tool-preset-group">
-      <div class="tool-preset active" onclick="setApportionPreset(this,'家賃')">🏠 家賃</div>
-      <div class="tool-preset" onclick="setApportionPreset(this,'通信費')">📡 通信費</div>
-      <div class="tool-preset" onclick="setApportionPreset(this,'光熱費')">💡 光熱費</div>
-      <div class="tool-preset" onclick="setApportionPreset(this,'車両費')">🚗 車両費</div>
-    </div>
-
-    <div class="tool-input-group">
-      <label id="apportionLabel">🏠 家賃の月額（円）</label>
-      <input type="text" class="tool-input" id="apportionInput" placeholder="例: 80000" inputmode="numeric">
-    </div>
-
-    <div class="tool-input-group">
-      <label>📐 業務使用率</label>
-      <div class="tool-slider-group">
-        <input type="range" class="tool-slider" id="apportionSlider" min="0" max="100" value="25" oninput="updateSliderValue()">
-        <span class="tool-slider-value" id="apportionSliderValue">25%</span>
-      </div>
-    </div>
-
-    <button class="tool-btn" onclick="calcApportion()">計算する</button>
-
-    <div class="tool-result" id="apportionResult">
-    </div>
-  </div>
-</section>
-
 <!-- ===== SECTION: FORM MAP ===== -->
 <section id="formmap" class="fade-up">
   <div class="section-title">📄 申告書のどこに何を書く？</div>
@@ -1406,27 +991,27 @@ section{padding:2rem 0}
 
       <!-- 1: 事業の収入（ア） -->
       <div class="form-hl form-hl-green" data-num="1"
-           style="top:16.5%;left:3%;width:44%;height:5.5%"></div>
+           style="top:12%;left:2.5%;width:45%;height:3.5%"></div>
 
-      <!-- 2: 給与の収入（エ） -->
+      <!-- 2: 給与の収入（オ） -->
       <div class="form-hl form-hl-blue" data-num="2"
-           style="top:26.5%;left:3%;width:44%;height:3.5%"></div>
+           style="top:19.5%;left:2.5%;width:45%;height:3%"></div>
 
       <!-- 3: 事業の所得（①） -->
       <div class="form-hl form-hl-green" data-num="3"
-           style="top:35%;left:3%;width:44%;height:5%"></div>
+           style="top:30.5%;left:2.5%;width:45%;height:3%"></div>
 
       <!-- 4: 給与の所得（⑥） -->
       <div class="form-hl form-hl-blue" data-num="4"
-           style="top:44%;left:3%;width:44%;height:3%"></div>
+           style="top:38%;left:2.5%;width:45%;height:3%"></div>
 
       <!-- 5: 所得から差し引かれる金額 -->
       <div class="form-hl form-hl-orange" data-num="5"
-           style="top:57%;left:3%;width:44%;height:30%"></div>
+           style="top:49%;left:2.5%;width:45%;height:25%"></div>
 
       <!-- 6: 税金の計算 -->
       <div class="form-hl form-hl-purple" data-num="6"
-           style="top:14.5%;left:52%;width:40%;height:72%"></div>
+           style="top:11%;left:49%;width:44%;height:47%"></div>
     </div>
 
     <div class="form-legend">
@@ -1604,6 +1189,348 @@ section{padding:2rem 0}
   </p>
 </section>
 
+
+<div id="ref-section" style="text-align:center;padding:2.5rem 0 0.5rem">
+  <span style="font-size:1.2rem;font-weight:700;color:var(--navy);font-family:var(--font-display);background:var(--bg2);padding:0.5rem 1.5rem;border-radius:50px">📚 参考セクション</span>
+</div>
+
+<!-- ===== SECTION: EXPENSE TABLE + QUIZ ===== -->
+<section id="quiz" class="fade-up">
+  <div class="section-title">🧠 経費の ○ × クイズ</div>
+  <div class="section-sub">タップして正解を確認しよう！</div>
+
+  <!-- 3-column expense reference table -->
+  <div class="card expense-section" style="padding:0;overflow:hidden;margin-bottom:1.5rem">
+    <div class="expense-header">
+      <div class="col-green">🟢 経費</div>
+      <div class="col-blue">🔵 所得控除</div>
+      <div class="col-red">🔴 どちらでもない</div>
+    </div>
+    <div class="expense-columns">
+      <div class="expense-column">
+        <div class="expense-item"><span class="emoji">⚽</span> ボール・コーン・ビブス等</div>
+        <div class="expense-item"><span class="emoji">👟</span> スパイク・トレシュー・ウェア</div>
+        <div class="expense-item"><span class="emoji">🚃</span> 交通費（練習場・試合会場）</div>
+        <div class="expense-item"><span class="emoji">🎓</span> 指導者ライセンス・研修費</div>
+        <div class="expense-item"><span class="emoji">💻</span> PC・タブレット（映像分析用）</div>
+        <div class="expense-item"><span class="emoji">📡</span> 通信費（ネット・携帯按分）</div>
+        <div class="expense-item"><span class="emoji">🏠</span> 家賃・光熱費（按分）</div>
+        <div class="expense-item"><span class="emoji">🚗</span> ガソリン代・駐車場代</div>
+      </div>
+      <div class="expense-column">
+        <div class="expense-item"><span class="emoji">🏥</span> 国民健康保険料</div>
+        <div class="expense-item"><span class="emoji">🏛️</span> 国民年金</div>
+        <div class="expense-item"><span class="emoji">💊</span> 生命保険料</div>
+        <div class="expense-item"><span class="emoji">🏦</span> iDeCo</div>
+        <div class="expense-item"><span class="emoji">🎁</span> ふるさと納税</div>
+        <div class="expense-item"><span class="emoji">🏥</span> 医療費</div>
+      </div>
+      <div class="expense-column">
+        <div class="expense-item"><span class="emoji">🍽️</span> プライベートの食事</div>
+        <div class="expense-item"><span class="emoji">👔</span> 普段着・私服</div>
+        <div class="expense-item"><span class="emoji">🏛️</span> 住民税・所得税</div>
+        <div class="expense-item"><span class="emoji">🚨</span> 罰金・反則金</div>
+        <div class="expense-item"><span class="emoji">👨‍👩‍👧</span> 届出なしの家族給与</div>
+      </div>
+    </div>
+    <div class="expense-note">
+      ★ 家賃・通信費は<strong>「家事按分」</strong>で業務使用割合だけ計上OK。例：携帯代1万円で業務利用50% → 月5,000円が経費<br>
+      ★ 🔵所得控除は経費ではなく、確定申告書の<strong>控除欄</strong>で入力します（引く場所が違う！）
+    </div>
+  </div>
+
+  <!-- Quiz -->
+  <div style="display:flex;flex-direction:column;gap:0.6rem" id="quizArea">
+    <div class="card quiz-card" onclick="toggleQuiz(this)">
+      <div class="quiz-q">
+        <span class="quiz-emoji">❓</span>
+        <span class="quiz-text">練習用に買ったコーンやビブスは経費？</span>
+        <span class="quiz-tap">タップ</span>
+      </div>
+      <div class="quiz-a">
+        <span class="quiz-result ok">🟢 経費OK！</span>
+        <p>指導で使うコーン・ビブス・ボール等の練習用具は「消耗品費」として経費になります。10万円以上の用具は減価償却が必要です。</p>
+      </div>
+    </div>
+
+    <div class="card quiz-card" onclick="toggleQuiz(this)">
+      <div class="quiz-q">
+        <span class="quiz-emoji">❓</span>
+        <span class="quiz-text">国民健康保険料は経費に入れる？</span>
+        <span class="quiz-tap">タップ</span>
+      </div>
+      <div class="quiz-a">
+        <span class="quiz-result deduction">🔵 経費ではなく「所得控除」！</span>
+        <p>国保は<strong>「社会保険料控除」（所得控除）</strong>として申告書の別の欄で入力します。効果は似ていますが、入力場所が違います。経費欄に書かないよう注意！</p>
+      </div>
+    </div>
+
+    <div class="card quiz-card" onclick="toggleQuiz(this)">
+      <div class="quiz-q">
+        <span class="quiz-emoji">❓</span>
+        <span class="quiz-text">保護者との面談で使ったカフェ代は経費？</span>
+        <span class="quiz-tap">タップ</span>
+      </div>
+      <div class="quiz-a">
+        <span class="quiz-result ok">🟢 経費OK！</span>
+        <p>保護者やクラブ関係者との打ち合わせで使ったカフェ代は「会議費」として経費になります。ただしプライベートの飲食はNGです。</p>
+      </div>
+    </div>
+
+    <div class="card quiz-card" onclick="toggleQuiz(this)">
+      <div class="quiz-q">
+        <span class="quiz-emoji">❓</span>
+        <span class="quiz-text">普段も着るトレーニングウェアは経費？</span>
+        <span class="quiz-tap">タップ</span>
+      </div>
+      <div class="quiz-a">
+        <span class="quiz-result ng">🔴 原則NG</span>
+        <p>プライベートでも着られるウェアは原則として経費にできません。ただしチームロゴ入りの<strong>公式ユニフォームや指定ウェア</strong>は経費にできます。</p>
+      </div>
+    </div>
+
+    <div class="card quiz-card" onclick="toggleQuiz(this)">
+      <div class="quiz-q">
+        <span class="quiz-emoji">❓</span>
+        <span class="quiz-text">自分の車のガソリン代は全額経費にできる？</span>
+        <span class="quiz-tap">タップ</span>
+      </div>
+      <div class="quiz-a">
+        <span class="quiz-result partial">△ 一部だけOK</span>
+        <p>練習場や試合会場への移動に使う分だけ「家事按分」として計上できます。<strong>業務で使った走行距離の割合</strong>を記録しておくのがポイント。全額はNGです。</p>
+      </div>
+    </div>
+
+    <div class="card quiz-card" onclick="toggleQuiz(this)">
+      <div class="quiz-q">
+        <span class="quiz-emoji">❓</span>
+        <span class="quiz-text">ふるさと納税は経費？</span>
+        <span class="quiz-tap">タップ</span>
+      </div>
+      <div class="quiz-a">
+        <span class="quiz-result deduction">🔵 経費ではなく「所得控除」！</span>
+        <p>ふるさと納税は<strong>「寄附金控除」（所得控除）</strong>です。確定申告書の控除欄で入力します。ワンストップ特例を使っていた人も、確定申告する場合は改めて申告が必要です。</p>
+      </div>
+    </div>
+
+    <div class="card quiz-card" onclick="toggleQuiz(this)">
+      <div class="quiz-q">
+        <span class="quiz-emoji">❓</span>
+        <span class="quiz-text">指導者ライセンスの取得・更新費用は経費？</span>
+        <span class="quiz-tap">タップ</span>
+      </div>
+      <div class="quiz-a">
+        <span class="quiz-result ok">🟢 経費OK！</span>
+        <p>JFA公認ライセンスの取得費・更新費・講習会の参加費は「研修費」として全額経費にできます。受講のための交通費や宿泊費も経費OK。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION: よくある失敗集 ===== -->
+<section id="mistakes" class="fade-up">
+  <div class="section-title">⚠️ よくある失敗・NG集</div>
+  <div class="section-sub">初心者がやりがちなミスをまとめました</div>
+
+  <div class="mistake-card">
+    <div class="mistake-ng">
+      <span class="mistake-ng-badge">NG</span>
+      <span class="mistake-ng-text">振込額をそのまま「収入」に書いた</span>
+    </div>
+    <div class="mistake-ok">
+      <span class="mistake-ok-badge">正解</span>
+      <span class="mistake-ok-text">振込額は源泉税が引かれた後の金額。確定申告には<strong>税引前の総額（＝請求額）</strong>を入力する。支払調書の「支払金額」欄を確認しよう。</span>
+    </div>
+  </div>
+
+  <div class="mistake-card">
+    <div class="mistake-ng">
+      <span class="mistake-ng-badge">NG</span>
+      <span class="mistake-ng-text">源泉徴収税額の入力を忘れた</span>
+    </div>
+    <div class="mistake-ok">
+      <span class="mistake-ok-badge">正解</span>
+      <span class="mistake-ok-text">源泉税を入力しないと<strong>二重課税</strong>になり、本来還付されるお金が戻ってこない。申告書の(48)欄に必ず入力。</span>
+    </div>
+  </div>
+
+  <div class="mistake-card">
+    <div class="mistake-ng">
+      <span class="mistake-ng-badge">NG</span>
+      <span class="mistake-ng-text">国保・年金を「経費」欄に書いた</span>
+    </div>
+    <div class="mistake-ok">
+      <span class="mistake-ok-badge">正解</span>
+      <span class="mistake-ok-text">国保・年金は経費ではなく<strong>「所得控除」</strong>。確定申告書の控除欄で入力する。入力場所が違うだけで、税金を減らす効果は同じ。</span>
+    </div>
+  </div>
+
+  <div class="mistake-card">
+    <div class="mistake-ng">
+      <span class="mistake-ng-badge">NG</span>
+      <span class="mistake-ng-text">家賃を全額「経費」にした</span>
+    </div>
+    <div class="mistake-ok">
+      <span class="mistake-ok-badge">正解</span>
+      <span class="mistake-ok-text">自宅兼事務所の場合は<strong>「家事按分」</strong>が必要。仕事で使う面積や時間の割合だけが経費になる。全額は税務署に否認されるリスクあり。</span>
+    </div>
+  </div>
+
+  <div class="mistake-card">
+    <div class="mistake-ng">
+      <span class="mistake-ng-badge">NG</span>
+      <span class="mistake-ng-text">ふるさと納税のワンストップ特例のまま確定申告した</span>
+    </div>
+    <div class="mistake-ok">
+      <span class="mistake-ok-badge">正解</span>
+      <span class="mistake-ok-text">確定申告するとワンストップ特例は<strong>無効</strong>になる。改めて<strong>寄附金控除</strong>として申告が必要。忘れると控除がゼロになる。</span>
+    </div>
+  </div>
+
+  <div class="mistake-card">
+    <div class="mistake-ng">
+      <span class="mistake-ng-badge">NG</span>
+      <span class="mistake-ng-text">領収書を捨ててしまった</span>
+    </div>
+    <div class="mistake-ok">
+      <span class="mistake-ok-badge">正解</span>
+      <span class="mistake-ok-text">白色申告でも<strong>5年間の保存義務</strong>がある。税務調査で求められることも。年ごとにファイルにまとめて保管しておこう。</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION: 用語集 ===== -->
+<section id="glossary" class="fade-up">
+  <div class="section-title">📖 用語ミニ辞典</div>
+  <div class="section-sub">わからない言葉があったらここで確認</div>
+
+  <div class="card" style="padding:0.8rem">
+    <div class="glossary-grid">
+      <div class="glossary-item">
+        <div class="glossary-term">収入 <span class="g-badge g-orange">売上</span></div>
+        <div class="glossary-def">取引先からもらった報酬の<strong>税引前の総額</strong>。振込額ではなく、源泉税を引く前の金額のこと。</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">経費</div>
+        <div class="glossary-def">仕事のために使ったお金。交通費・用具代・通信費など。<strong>収入から差し引いて所得を減らせる</strong>。</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">所得 <span class="g-badge g-navy">利益</span></div>
+        <div class="glossary-def"><strong>収入 − 経費 = 所得</strong>。この金額をベースに税金が計算される。会社でいう「利益」に近い。</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">所得控除</div>
+        <div class="glossary-def">所得からさらに差し引けるもの。国保・年金・iDeCo・ふるさと納税など。<strong>経費とは入力場所が違う</strong>。</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">源泉徴収税 <span class="g-badge g-red">天引き</span></div>
+        <div class="glossary-def">取引先が報酬から天引きして国に先払いしてくれている税金。申告書に書かないと<strong>二重課税</strong>になる。</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">確定申告</div>
+        <div class="glossary-def">1年間の収入・経費・控除をまとめて、自分で税金を計算し税務署に報告すること。毎年2〜3月に行う。</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">支払調書</div>
+        <div class="glossary-def">取引先が発行する書類。「支払金額」と「源泉徴収税額」が書いてある。届かないこともあるが問題なし。</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">収支内訳書</div>
+        <div class="glossary-def">1年間の売上と経費を項目別にまとめた書類。確定申告書と一緒に作る。白色申告で使う。</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">家事按分</div>
+        <div class="glossary-def">自宅兼事務所の家賃や通信費を、<strong>仕事で使った割合だけ</strong>経費にすること。全額はNG。</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">還付</div>
+        <div class="glossary-def">源泉徴収で払いすぎた税金が<strong>戻ってくる</strong>こと。確定申告をするとわかる。口座に振り込まれる。</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===== SECTION: 便利ツール ===== -->
+<section id="tools" class="fade-up">
+  <div class="section-title">🔧 便利ツール</div>
+  <div class="section-sub">申告書作成のおともに</div>
+
+  <!-- 源泉税逆算ツール -->
+  <div class="tool-card">
+    <h3>🧮 源泉税の逆算ツール</h3>
+
+    <div class="tool-guide">
+      <strong>まず確認！このツールが必要なケース：</strong>
+      <div class="tool-branch">
+        <div class="tool-branch-item has-doc">
+          <strong>✅ 支払調書がある</strong><br>
+          →「支払金額」と「源泉徴収税額」がそのまま書いてあるので、<strong>このツールは不要</strong>。そのまま転記すればOK。
+        </div>
+        <div class="tool-branch-item no-doc">
+          <strong>⚠️ 振込額（手取り）しかわからない</strong><br>
+          → 振込額は源泉税が引かれた後の金額。税引前の請求額に戻す必要がある。<strong>↓ このツールで逆算できます</strong>。
+        </div>
+      </div>
+
+      <strong>「税込」と「税抜」の違い：</strong><br>
+      源泉税の計算方法は、請求書に消費税を分けて書いたかどうかで変わります。<br>
+      ・<strong>税込に対して源泉徴収</strong> → 請求書に消費税を分けて書いていない場合（総額に10.21%）<br>
+      ・<strong>税抜に対して源泉徴収</strong> → 請求書に消費税を明確に分けて書いている場合（税抜額に10.21%）こちらが一般的<br>
+      <span style="font-size:0.8rem;color:var(--text-muted)">※ 迷ったら自分の請求書を確認してみてください</span>
+    </div>
+
+    <div class="tool-radio-group">
+      <div class="tool-radio active" onclick="setWithholdingMode('excluded')">税抜に対して源泉<br><span style="font-size:0.7rem;font-weight:400">（一般的）</span></div>
+      <div class="tool-radio" onclick="setWithholdingMode('included')">税込に対して源泉</div>
+    </div>
+
+    <div class="tool-input-group">
+      <label>💴 振込額（手取り金額）</label>
+      <input type="text" class="tool-input" id="withholdingInput" placeholder="例: 90790" inputmode="numeric">
+    </div>
+
+    <button class="tool-btn" onclick="calcWithholding()">逆算する</button>
+
+    <div class="tool-result" id="withholdingResult">
+    </div>
+  </div>
+
+  <!-- 家事按分計算 -->
+  <div class="tool-card">
+    <h3>🏠 家事按分かんたん計算</h3>
+    <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:1rem">
+      月額と業務使用率から、年間の経費額をサクッと計算できます。
+    </p>
+
+    <div class="tool-preset-group">
+      <div class="tool-preset active" onclick="setApportionPreset(this,'家賃')">🏠 家賃</div>
+      <div class="tool-preset" onclick="setApportionPreset(this,'通信費')">📡 通信費</div>
+      <div class="tool-preset" onclick="setApportionPreset(this,'光熱費')">💡 光熱費</div>
+      <div class="tool-preset" onclick="setApportionPreset(this,'車両費')">🚗 車両費</div>
+    </div>
+
+    <div class="tool-input-group">
+      <label id="apportionLabel">🏠 家賃の月額（円）</label>
+      <input type="text" class="tool-input" id="apportionInput" placeholder="例: 80000" inputmode="numeric">
+    </div>
+
+    <div class="tool-input-group">
+      <label>📐 業務使用率</label>
+      <div class="tool-slider-group">
+        <input type="range" class="tool-slider" id="apportionSlider" min="0" max="100" value="25" oninput="updateSliderValue()">
+        <span class="tool-slider-value" id="apportionSliderValue">25%</span>
+      </div>
+    </div>
+
+    <button class="tool-btn" onclick="calcApportion()">計算する</button>
+
+    <div class="tool-result" id="apportionResult">
+    </div>
+  </div>
+</section>
+
+
 </div><!-- /container -->
 
 <!-- FOOTER -->
@@ -1644,34 +1571,6 @@ function resetAllChecks() {
   });
   updatePrepProgress();
   localStorage.removeItem('taxguide-prep');
-  document.querySelectorAll('.step-item.done').forEach(function(item) {
-    item.classList.remove('done');
-    item.querySelector('.step-check').textContent = '';
-  });
-  updateProgress();
-  localStorage.removeItem('taxguide-steps');
-}
-
-// === Checklist ===
-function toggleStep(el) {
-  el.classList.toggle('done');
-  const check = el.querySelector('.step-check');
-  check.textContent = el.classList.contains('done') ? '✓' : '';
-  updateProgress();
-  saveStepState();
-}
-function updateProgress() {
-  const total = document.querySelectorAll('.step-item').length;
-  const done = document.querySelectorAll('.step-item.done').length;
-  const pct = (done / total) * 100;
-  document.getElementById('progressFill').style.width = pct + '%';
-  document.getElementById('progressText').textContent = done + ' / ' + total + ' 完了' + (done === total ? ' 🎉' : '');
-}
-function saveStepState() {
-  const items = document.querySelectorAll('.step-item');
-  const done = [];
-  items.forEach(function(item, i) { if (item.classList.contains('done')) done.push(i); });
-  localStorage.setItem('taxguide-steps', JSON.stringify(done));
 }
 
 // === E-Tax Route Tabs ===
@@ -1792,20 +1691,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
       updatePrepProgress();
-    }
-  } catch(e) {}
-  // Restore step checklist
-  try {
-    var savedSteps = JSON.parse(localStorage.getItem('taxguide-steps'));
-    if (savedSteps && savedSteps.length) {
-      var stepItems = document.querySelectorAll('.step-item');
-      savedSteps.forEach(function(i) {
-        if (stepItems[i]) {
-          stepItems[i].classList.add('done');
-          stepItems[i].querySelector('.step-check').textContent = '✓';
-        }
-      });
-      updateProgress();
     }
   } catch(e) {}
 });
