@@ -752,6 +752,9 @@ section{padding:2rem 0}
       ★ <strong>業務委託収入</strong> → <strong>ア欄（事業）</strong>または<strong>カ欄（雑・業務）</strong>に支払調書の金額を入力<br>
       ※ 入力する欄が違うので注意！両方ある場合はそれぞれ入力します
     </div>
+    <p style="text-align:center;margin-top:0.8rem;font-size:0.85rem">
+      <a href="https://www.nta.go.jp/taxes/shiraberu/shinkoku/yoshiki/01/shinkokusho/pdf/r07/01.pdf" target="_blank" rel="noopener noreferrer">📎 確定申告書 第一表（様式）PDFを見る（国税庁）</a>
+    </p>
   </div>
 
   <div class="card" style="background:var(--orange-light);border-left:4px solid var(--orange)">
@@ -1335,6 +1338,97 @@ section{padding:2rem 0}
     <button class="tool-btn" onclick="calcApportion()">計算する</button>
 
     <div class="tool-result" id="apportionResult">
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION: FORM MAP ===== -->
+<section id="formmap" class="fade-up">
+  <div class="section-title">📄 申告書のどこに何を書く？</div>
+  <div class="section-sub">確定申告書（第一表）の記入場所を確認しよう</div>
+
+  <div class="card" style="padding:0.8rem">
+    <div class="form-map">
+      <img src="form-table1.png" alt="確定申告書 第一表" class="form-map-img">
+
+      <!-- 1: 事業の収入（ア） -->
+      <div class="form-hl form-hl-green" data-num="1"
+           style="top:16.5%;left:3%;width:44%;height:5.5%"></div>
+
+      <!-- 2: 給与の収入（エ） -->
+      <div class="form-hl form-hl-blue" data-num="2"
+           style="top:26.5%;left:3%;width:44%;height:3.5%"></div>
+
+      <!-- 3: 事業の所得（①） -->
+      <div class="form-hl form-hl-green" data-num="3"
+           style="top:35%;left:3%;width:44%;height:5%"></div>
+
+      <!-- 4: 給与の所得（⑥） -->
+      <div class="form-hl form-hl-blue" data-num="4"
+           style="top:44%;left:3%;width:44%;height:3%"></div>
+
+      <!-- 5: 所得から差し引かれる金額 -->
+      <div class="form-hl form-hl-orange" data-num="5"
+           style="top:57%;left:3%;width:44%;height:30%"></div>
+
+      <!-- 6: 税金の計算 -->
+      <div class="form-hl form-hl-purple" data-num="6"
+           style="top:14.5%;left:52%;width:40%;height:72%"></div>
+    </div>
+
+    <div class="form-legend">
+      <div class="form-legend-item">
+        <div class="form-legend-num" style="background:var(--green)">1</div>
+        <div class="form-legend-body">
+          <div class="form-legend-title">事業 - 収入金額（ア）</div>
+          <div class="form-legend-desc">業務委託で受け取った<strong>税引前の報酬合計</strong>を記入。鎌倉インテルやスクールからの報酬を合算します。</div>
+          <span class="form-legend-hint hint-green">支払調書の「支払金額」を確認</span>
+        </div>
+      </div>
+      <div class="form-legend-item">
+        <div class="form-legend-num" style="background:var(--blue)">2</div>
+        <div class="form-legend-body">
+          <div class="form-legend-title">給与 - 収入金額（エ）</div>
+          <div class="form-legend-desc">会社員・アルバイトなど<strong>給与をもらっている場合</strong>の額面合計を記入。給与がない人は空欄でOK。</div>
+          <span class="form-legend-hint hint-blue">源泉徴収票の「支払金額」を確認</span>
+        </div>
+      </div>
+      <div class="form-legend-item">
+        <div class="form-legend-num" style="background:var(--green)">3</div>
+        <div class="form-legend-body">
+          <div class="form-legend-title">事業 - 所得金額（①）</div>
+          <div class="form-legend-desc"><strong>事業収入 − 経費 = 事業所得</strong>。収支内訳書で計算した金額がここに入ります。</div>
+          <span class="form-legend-hint hint-green">用具・交通費・ライセンス費などを引いた額</span>
+        </div>
+      </div>
+      <div class="form-legend-item">
+        <div class="form-legend-num" style="background:var(--blue)">4</div>
+        <div class="form-legend-body">
+          <div class="form-legend-title">給与 - 所得金額（⑥）</div>
+          <div class="form-legend-desc"><strong>給与収入 − 給与所得控除 = 給与所得</strong>。給与所得控除は収入額に応じて自動計算されます。</div>
+          <span class="form-legend-hint hint-blue">e-Taxなら自動計算してくれる</span>
+        </div>
+      </div>
+      <div class="form-legend-item">
+        <div class="form-legend-num" style="background:var(--orange)">5</div>
+        <div class="form-legend-body">
+          <div class="form-legend-title">所得から差し引かれる金額（所得控除）</div>
+          <div class="form-legend-desc">国民健康保険、国民年金、生命保険料、iDeCo、ふるさと納税などを入力。<strong>経費とは別の欄</strong>なので注意。</div>
+          <span class="form-legend-hint hint-orange">控除証明書を見ながら入力</span>
+        </div>
+      </div>
+      <div class="form-legend-item">
+        <div class="form-legend-num" style="background:#8B5CF6">6</div>
+        <div class="form-legend-body">
+          <div class="form-legend-title">税金の計算</div>
+          <div class="form-legend-desc">すべての所得と控除から<strong>最終的な納税額 or 還付額</strong>が算出されます。源泉徴収税額の入力もここ。</div>
+          <span class="form-legend-hint hint-purple">源泉徴収税を入れ忘れると還付が受けられない！</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-map-note">
+      💡 <strong>ポイント：</strong>コーチ報酬（事業）と会社の給与、両方ある人は<strong>両方とも記入</strong>が必要です。e-Taxの作成コーナーなら、入力すれば税額は自動で計算してくれます。
     </div>
   </div>
 </section>
