@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業務委託フリーランスの確定申告ガイド</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FFF9F0;
+  --bg2:#FFF3E0;
+  --card:#FFFFFF;
+  --navy:#2D3A5C;
+  --navy-light:#4A5A80;
+  --green:#2E9E6B;
+  --green-light:#E8F8F0;
+  --green-pale:#D1F5E3;
+  --blue:#4A90D9;
+  --blue-light:#E3F0FF;
+  --orange:#E88D3F;
+  --orange-light:#FFF0E0;
+  --red:#D9534F;
+  --red-light:#FFE8E8;
+  --pink:#E8A0BF;
+  --text:#3A3A4A;
+  --text-light:#6B7280;
+  --text-muted:#9CA3AF;
+  --shadow:0 4px 20px rgba(45,58,92,0.08);
+  --shadow-hover:0 8px 30px rgba(45,58,92,0.12);
+  --radius:16px;
+  --radius-sm:10px;
+  --font-display:'Zen Maru Gothic',sans-serif;
+  --font-body:'M PLUS Rounded 1c',sans-serif;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:var(--font-body);color:var(--text);
+  background:var(--bg);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+/* Grain overlay */
+body::before{
+  content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+  pointer-events:none;z-index:9999;opacity:0.03;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;
+  background:linear-gradient(135deg,#FFF9F0 0%,#FFE8CC 40%,#E3F0FF 100%);
+  padding:3rem 1.5rem 2.5rem;
+  text-align:center;
+  overflow:hidden;
+}
+.hero::after{
+  content:'';position:absolute;bottom:-2px;left:0;right:0;height:60px;
+  background:var(--bg);
+  border-radius:60% 60% 0 0 / 100% 100% 0 0;
+}
+.hero-emoji{font-size:3rem;margin-bottom:0.5rem;display:block;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hero h1{
+  font-family:var(--font-display);font-size:clamp(1.6rem,5vw,2.2rem);
+  font-weight:900;color:var(--navy);margin-bottom:0.4rem;
+  letter-spacing:-0.02em;
+}
+.hero p{
+  font-size:clamp(0.85rem,2.5vw,1rem);color:var(--text-light);
+  max-width:500px;margin:0 auto;
+}
+.hero-badge{
+  display:inline-block;margin-top:1rem;padding:0.4rem 1.2rem;
+  background:var(--card);border-radius:50px;font-size:0.8rem;
+  color:var(--navy);font-weight:700;box-shadow:var(--shadow);
+}
+
+/* ===== NAV PILLS ===== */
+.nav-pills{
+  display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;
+  padding:1rem 1.5rem 0.5rem;position:sticky;top:0;z-index:100;
+  background:rgba(255,249,240,0.92);backdrop-filter:blur(12px);
+}
+.nav-pill{
+  padding:0.5rem 1rem;border-radius:50px;border:2px solid transparent;
+  background:var(--card);font-size:0.78rem;font-weight:700;font-family:var(--font-body);
+  color:var(--navy);cursor:pointer;box-shadow:var(--shadow);
+  transition:all 0.2s;text-decoration:none;
+}
+.nav-pill:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);border-color:var(--orange)}
+
+/* ===== SECTIONS ===== */
+.container{max-width:720px;margin:0 auto;padding:0 1.5rem}
+section{padding:2rem 0}
+.section-title{
+  font-family:var(--font-display);font-size:clamp(1.3rem,4vw,1.6rem);
+  font-weight:900;color:var(--navy);margin-bottom:0.3rem;
+}
+.section-sub{font-size:0.9rem;color:var(--text-light);margin-bottom:1.5rem}
+.card{
+  background:var(--card);border-radius:var(--radius);padding:1.5rem;
+  box-shadow:var(--shadow);transition:transform 0.2s;
+  margin-bottom:1rem;
+}
+.card:hover{transform:translateY(-2px)}
+
+/* ===== INTRO (そもそも確定申告とは) ===== */
+.intro-card{
+  background:linear-gradient(135deg,var(--blue-light),var(--card));
+  border-left:4px solid var(--blue);
+}
+.intro-card h3{font-family:var(--font-display);color:var(--navy);font-size:1.1rem;margin-bottom:0.5rem}
+.intro-card p{font-size:0.9rem;line-height:1.8}
+.intro-highlight{
+  display:inline-block;background:var(--orange-light);padding:0.1em 0.5em;
+  border-radius:6px;font-weight:700;color:var(--orange);
+}
+.intro-flow{
+  display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0.4rem;
+  margin:1rem 0;padding:1rem;background:var(--bg2);border-radius:var(--radius-sm);
+}
+.intro-flow .flow-item{
+  padding:0.3rem 0.7rem;border-radius:8px;font-size:0.82rem;font-weight:700;
+  white-space:nowrap;
+}
+.intro-flow .flow-arrow{color:var(--text-muted);font-size:1.1rem}
+
+/* ===== FORM ILLUSTRATION ===== */
+.form-illust{
+  background:var(--card);border:2px solid var(--navy);border-radius:var(--radius);
+  overflow:hidden;margin-bottom:1rem;
+}
+.form-illust-title{
+  background:var(--navy);color:#fff;text-align:center;padding:0.5rem;
+  font-family:var(--font-display);font-weight:900;font-size:0.9rem;
+}
+.form-illust-body{
+  display:grid;grid-template-columns:1fr 1fr;min-height:280px;
+}
+.form-left{
+  border-right:2px solid #e0e0e0;display:flex;flex-direction:column;
+}
+.form-right{
+  display:flex;flex-direction:column;
+}
+.form-block{
+  padding:0.6rem 0.8rem;border-bottom:1px dashed #d0d0d0;flex:1;
+}
+.form-block:last-child{border-bottom:none}
+.form-block-label{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.05em;margin-bottom:0.3rem;
+  display:flex;align-items:center;gap:0.3rem;
+}
+.form-block-label .color-dot{
+  width:10px;height:10px;border-radius:50%;display:inline-block;flex-shrink:0;
+}
+.form-block-items{font-size:0.75rem;color:var(--text-light);line-height:1.7}
+.form-block-items .form-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0.15rem 0;
+}
+.form-row .form-label{font-weight:500}
+.form-row .form-source{
+  font-size:0.65rem;padding:0.1em 0.4em;border-radius:4px;white-space:nowrap;
+}
+.form-source.src-blue{background:var(--blue-light);color:var(--blue)}
+.form-source.src-orange{background:var(--orange-light);color:var(--orange)}
+.form-source.src-red{background:var(--red-light);color:var(--red)}
+.form-illust-footer{
+  background:var(--bg2);padding:0.6rem 0.8rem;font-size:0.75rem;
+  line-height:1.7;border-top:2px solid #e0e0e0;
+}
+.form-illust-footer strong{color:var(--navy)}
+
+/* ===== CHECKLIST ===== */
+.step-item{
+  display:flex;gap:1rem;align-items:flex-start;
+  padding:1rem 1.2rem;border-radius:var(--radius-sm);
+  cursor:pointer;transition:all 0.2s;position:relative;
+  border:2px solid transparent;
+}
+.step-item:hover{background:var(--bg2)}
+.step-item.done{background:var(--green-light);border-color:var(--green)}
+.step-check{
+  width:28px;height:28px;border-radius:50%;border:2.5px solid var(--text-muted);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:all 0.3s;margin-top:0.15rem;font-size:0.9rem;
+}
+.step-item.done .step-check{
+  background:var(--green);border-color:var(--green);color:#fff;
+  animation:pop 0.3s ease;
+}
+@keyframes pop{0%{transform:scale(0.7)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+.step-num{
+  font-family:var(--font-display);font-weight:900;font-size:0.75rem;
+  color:var(--text-muted);letter-spacing:0.05em;margin-bottom:0.1rem;
+}
+.step-item.done .step-num{color:var(--green)}
+.step-title{font-weight:700;font-size:1rem;color:var(--navy);margin-bottom:0.2rem}
+.step-desc{font-size:0.82rem;color:var(--text-light);line-height:1.6}
+.step-warn{
+  display:inline-block;background:var(--red-light);color:var(--red);
+  font-size:0.75rem;font-weight:700;padding:0.15em 0.5em;border-radius:6px;
+  margin-top:0.3rem;
+}
+.step-docs{
+  margin-top:0.5rem;padding-top:0.5rem;border-top:1px dashed #e0e0e0;
+}
+.step-docs-label{
+  font-size:0.72rem;font-weight:700;color:var(--text-muted);margin-bottom:0.3rem;
+}
+.step-docs-list{display:flex;flex-wrap:wrap;gap:0.3rem}
+.doc-tag{
+  display:inline-block;background:var(--bg2);border:1px solid #e8e0d0;
+  border-radius:20px;padding:0.15em 0.6em;font-size:0.7rem;
+  color:var(--navy-light);white-space:nowrap;font-weight:500;
+}
+.progress-bar{
+  height:6px;background:var(--bg2);border-radius:10px;overflow:hidden;margin:0.8rem 0 0.5rem;
+}
+.progress-fill{
+  height:100%;background:linear-gradient(90deg,var(--green),var(--blue));
+  border-radius:10px;transition:width 0.5s ease;
+}
+.progress-text{font-size:0.78rem;color:var(--text-muted);text-align:right;font-weight:500}
+
+/* ===== EXPENSE 3-COLUMN ===== */
+.expense-section .card{padding:0;overflow:hidden}
+.expense-header{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+}
+.expense-header div{
+  padding:0.6rem 0.4rem;text-align:center;font-weight:700;font-size:0.8rem;color:#fff;
+}
+.expense-header .col-green{background:var(--green)}
+.expense-header .col-blue{background:var(--blue)}
+.expense-header .col-red{background:var(--red)}
+.expense-columns{
+  display:grid;grid-template-columns:1fr 1fr 1fr;align-items:start;
+}
+.expense-column{display:flex;flex-direction:column}
+.expense-item{
+  padding:0.5rem 0.6rem;font-size:0.78rem;
+  border-bottom:1px solid #f0f0f0;
+  display:flex;align-items:center;gap:0.3rem;
+  line-height:1.5;
+}
+.expense-column:nth-child(1) .expense-item{background:var(--green-light)}
+.expense-column:nth-child(2) .expense-item{background:var(--blue-light)}
+.expense-column:nth-child(3) .expense-item{background:var(--red-light)}
+.expense-column:not(:last-child){border-right:1px solid #e8e8e8}
+.expense-item .emoji{flex-shrink:0}
+.expense-note{
+  font-size:0.75rem;color:var(--text-muted);padding:0.6rem 0.8rem;
+  background:var(--bg2);line-height:1.6;
+}
+
+/* ===== QUIZ ===== */
+.quiz-card{
+  border:2px solid var(--bg2);padding:0;overflow:hidden;
+  cursor:pointer;user-select:none;
+}
+.quiz-q{
+  padding:1rem 1.2rem;display:flex;align-items:center;gap:0.8rem;
+  transition:background 0.2s;
+}
+.quiz-q:hover{background:var(--bg2)}
+.quiz-emoji{font-size:1.3rem;flex-shrink:0}
+.quiz-text{font-weight:700;font-size:0.92rem;color:var(--navy)}
+.quiz-tap{font-size:0.7rem;color:var(--text-muted);margin-left:auto;white-space:nowrap}
+.quiz-a{
+  padding:0 1.2rem 1rem;font-size:0.85rem;line-height:1.7;
+  display:none;
+}
+.quiz-card.open .quiz-a{display:block;animation:fadeIn 0.3s}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.quiz-result{
+  display:inline-block;padding:0.2em 0.7em;border-radius:8px;
+  font-weight:700;font-size:0.85rem;margin-bottom:0.3rem;
+}
+.quiz-result.ok{background:var(--green-light);color:var(--green)}
+.quiz-result.ng{background:var(--red-light);color:var(--red)}
+.quiz-result.partial{background:var(--orange-light);color:var(--orange)}
+.quiz-result.deduction{background:var(--blue-light);color:var(--blue)}
+
+/* ===== DIFFERENCE CARD ===== */
+.diff-table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:var(--radius-sm)}
+.diff-table th,.diff-table td{padding:0.6rem 0.7rem;font-size:0.8rem;text-align:center}
+.diff-table th{color:#fff;font-weight:700}
+.diff-table th:first-child{background:var(--navy-light)}
+.diff-table th:nth-child(2){background:var(--green)}
+.diff-table th:nth-child(3){background:var(--blue)}
+.diff-table td{border-bottom:1px solid #f0f0f0}
+.diff-table td:first-child{font-weight:700;background:var(--bg2);text-align:left}
+.diff-table td:nth-child(2){background:var(--green-light)}
+.diff-table td:nth-child(3){background:var(--blue-light)}
+
+
+/* ===== E-TAX GUIDE ===== */
+.etax-steps{display:flex;flex-direction:column;gap:0.6rem}
+.etax-step{
+  display:flex;gap:0.8rem;align-items:flex-start;padding:0.8rem;
+  background:var(--bg);border-radius:var(--radius-sm);
+}
+.etax-num{
+  width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  font-weight:900;font-size:0.85rem;font-family:var(--font-display);
+}
+.etax-text{font-size:0.85rem;line-height:1.6}
+.etax-text strong{color:var(--navy)}
+.etax-tip{
+  display:inline-block;background:var(--orange-light);color:var(--orange);
+  font-size:0.75rem;font-weight:700;padding:0.15em 0.5em;border-radius:6px;
+  margin-top:0.3rem;
+}
+.etax-link{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  margin-top:1rem;padding:0.7rem 1.5rem;
+  background:var(--blue);color:#fff;border-radius:50px;
+  text-decoration:none;font-weight:700;font-size:0.9rem;
+  transition:all 0.2s;box-shadow:0 4px 15px rgba(74,144,217,0.3);
+}
+.etax-link:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(74,144,217,0.4)}
+
+/* ===== PREP CHECKLIST ===== */
+.prep-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:1rem}
+.prep-header{
+  background:linear-gradient(135deg,var(--orange),#D97706);
+  color:#fff;padding:1rem 1.2rem;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;
+}
+.prep-header h3{font-family:var(--font-display);font-size:1.05rem;margin:0}
+.prep-dl-btn{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  padding:0.5rem 1.1rem;border-radius:50px;border:2px solid #fff;
+  background:transparent;color:#fff;font-size:0.8rem;font-weight:700;
+  font-family:var(--font-body);cursor:pointer;transition:all 0.2s;
+}
+.prep-dl-btn:hover{background:#fff;color:var(--orange)}
+.prep-category{
+  padding:0.5rem 1.2rem 0.2rem;font-size:0.78rem;font-weight:700;
+  color:var(--text-muted);letter-spacing:0.05em;
+  border-bottom:1px dashed #e8e8e8;margin-top:0.3rem;
+}
+.prep-item{
+  display:flex;align-items:flex-start;gap:0.7rem;
+  padding:0.6rem 1.2rem;cursor:pointer;transition:background 0.15s;
+  border-bottom:1px solid #f5f5f5;user-select:none;
+}
+.prep-item:hover{background:var(--bg2)}
+.prep-item.checked{background:var(--green-light)}
+.prep-item.checked .prep-box{background:var(--green);border-color:var(--green);color:#fff}
+.prep-box{
+  width:22px;height:22px;border-radius:6px;border:2.5px solid #ccc;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:0.1rem;font-size:0.75rem;transition:all 0.2s;
+}
+.prep-name{font-weight:700;font-size:0.88rem;color:var(--navy)}
+.prep-desc{font-size:0.75rem;color:var(--text-light);line-height:1.5;margin-top:0.1rem}
+.prep-tip{
+  padding:0.7rem 1.2rem;background:var(--bg2);font-size:0.78rem;
+  color:var(--text-light);line-height:1.6;
+}
+.prep-progress{
+  padding:0.6rem 1.2rem;display:flex;align-items:center;gap:0.6rem;
+}
+.prep-progress-bar{flex:1;height:5px;background:#e8e8e8;border-radius:10px;overflow:hidden}
+.prep-progress-fill{height:100%;background:linear-gradient(90deg,var(--orange),var(--green));border-radius:10px;transition:width 0.4s}
+.prep-progress-text{font-size:0.75rem;color:var(--text-muted);font-weight:500;white-space:nowrap}
+
+/* ===== PRINT STYLES ===== */
+@media print{
+  body{background:#fff !important;font-size:11pt}
+  body::before{display:none}
+  .hero,.nav-pills,.fade-up{opacity:1 !important;transform:none !important}
+  .nav-pills,.hero,.footer,
+  section:not(#prep),
+  .prep-dl-btn{display:none !important}
+  #prep{display:block !important;padding:0}
+  #prep .section-title{font-size:18pt;margin-bottom:4pt}
+  #prep .section-sub{margin-bottom:8pt}
+  .prep-card{box-shadow:none;border:1.5pt solid #ccc}
+  .prep-header{background:var(--orange) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .prep-item{border-bottom:0.5pt solid #ddd;padding:4pt 10pt}
+  .prep-box{border:1.5pt solid #999 !important;background:transparent !important;color:transparent !important}
+  .prep-item.checked .prep-box{background:transparent !important;color:transparent !important}
+  .prep-category{font-size:9pt;padding:4pt 10pt 2pt}
+  .prep-name{font-size:10pt}
+  .prep-desc{font-size:8pt}
+  .prep-tip{font-size:8pt;padding:4pt 10pt}
+  .prep-progress{display:none}
+  .container{max-width:100%;padding:0 0.5cm}
+  @page{size:A4;margin:1.5cm}
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  text-align:center;padding:2rem 1.5rem;font-size:0.75rem;
+  color:var(--text-muted);line-height:1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:600px){
+  .expense-header{grid-template-columns:1fr}
+  .expense-columns{grid-template-columns:1fr}
+  .expense-column:not(:last-child){border-right:none;border-bottom:2px solid #e8e8e8}
+  .expense-item{font-size:0.78rem;padding:0.5rem 0.6rem}
+  .form-illust-body{grid-template-columns:1fr}
+  .form-left{border-right:none;border-bottom:2px solid #e0e0e0}
+.nav-pills{gap:0.3rem;padding:0.8rem 1rem 0.3rem}
+  .nav-pill{padding:0.4rem 0.7rem;font-size:0.7rem}
+  .diff-table th,.diff-table td{padding:0.5rem 0.4rem;font-size:0.72rem}
+}
+
+/* ===== ANIMATION ON SCROLL ===== */
+.fade-up{opacity:0;transform:translateY(20px);transition:all 0.6s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <span class="hero-emoji">📋</span>
+    <h1>業務委託フリーランスの<br>確定申告ガイド</h1>
+    <p>1〜2社から業務委託を受けている人のための<br>やさしい確定申告チェックポイント</p>
+    <div class="hero-badge">⏱ 5分で読めます</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav-pills">
+  <a class="nav-pill" href="#intro">📝 確定申告とは</a>
+  <a class="nav-pill" href="#prep">📦 準備するもの</a>
+  <a class="nav-pill" href="#checklist">✅ チェックリスト</a>
+  <a class="nav-pill" href="#quiz">🧠 経費クイズ</a>
+<a class="nav-pill" href="#etax">🖥 作成コーナー</a>
+</nav>
+
+<div class="container">
+
+<!-- ===== SECTION: そもそも確定申告とは ===== -->
+<section id="intro" class="fade-up">
+  <div class="section-title">📝 そもそも確定申告って何？</div>
+  <div class="section-sub">こわくない！やることはシンプルです</div>
+
+  <div class="card intro-card">
+    <h3>💡 ひとことで言うと</h3>
+    <p>
+      1年間（1月1日〜12月31日）の<span class="intro-highlight">収入と経費</span>をまとめて、
+      自分で税金を計算して税務署に報告すること。<br>
+      会社員は会社がやってくれますが（年末調整）、
+      <strong>業務委託のフリーランスは自分でやる必要があります。</strong>
+    </p>
+  </div>
+
+  <div class="card">
+    <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.1rem;margin-bottom:0.8rem">🔄 税金計算のながれ</h3>
+    <div class="intro-flow">
+      <span class="flow-item" style="background:var(--orange-light);color:var(--orange)">収入</span>
+      <span class="flow-arrow">−</span>
+      <span class="flow-item" style="background:var(--green-light);color:var(--green)">経費</span>
+      <span class="flow-arrow">＝</span>
+      <span class="flow-item" style="background:#f0f0f0;color:var(--navy)">所得</span>
+      <span class="flow-arrow">−</span>
+      <span class="flow-item" style="background:var(--blue-light);color:var(--blue)">所得控除</span>
+      <span class="flow-arrow">＝</span>
+      <span class="flow-item" style="background:var(--red-light);color:var(--red)">課税所得</span>
+    </div>
+    <p style="font-size:0.82rem;color:var(--text-light);text-align:center">
+      この「課税所得」に税率をかけて、源泉徴収済みの税額を引いたものが<strong>納付額（または還付額）</strong>です
+    </p>
+  </div>
+
+  <!-- 確定申告書 第一表 イラスト -->
+  <div class="form-illust">
+    <div class="form-illust-title">📄 確定申告書 第一表（かんたん図解）</div>
+    <div class="form-illust-body">
+      <!-- 左側：収入→所得→控除 -->
+      <div class="form-left">
+        <div class="form-block" style="background:var(--orange-light)">
+          <div class="form-block-label"><span class="color-dot" style="background:var(--orange)"></span> 収入金額等</div>
+          <div class="form-block-items">
+            <div class="form-row">
+              <span class="form-label">ア 事業（営業等）</span>
+              <span class="form-source src-orange">← 支払調書</span>
+            </div>
+            <div class="form-row">
+              <span class="form-label">オ 給与</span>
+              <span class="form-source src-blue">← 源泉徴収票</span>
+            </div>
+            <div class="form-row">
+              <span class="form-label">カ 雑（業務）</span>
+              <span class="form-source src-orange">← 支払調書</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-block" style="background:#f5f5f5">
+          <div class="form-block-label"><span class="color-dot" style="background:var(--navy)"></span> 所得金額等</div>
+          <div class="form-block-items">
+            <div class="form-row"><span class="form-label">収入 − 経費 = 所得</span></div>
+            <div class="form-row" style="font-size:0.68rem;color:var(--text-muted)"><span>※ 給与は自動で給与所得控除が適用</span></div>
+          </div>
+        </div>
+        <div class="form-block" style="background:var(--blue-light)">
+          <div class="form-block-label"><span class="color-dot" style="background:var(--blue)"></span> 所得から差し引かれる金額（所得控除）</div>
+          <div class="form-block-items">
+            <div class="form-row"><span class="form-label">社保・国保・年金・生命保険 等</span></div>
+            <div class="form-row"><span class="form-label">基礎控除 48万円</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- 右側：税金の計算 -->
+      <div class="form-right">
+        <div class="form-block" style="background:rgba(45,58,92,0.06)">
+          <div class="form-block-label"><span class="color-dot" style="background:var(--navy)"></span> 税金の計算</div>
+          <div class="form-block-items">
+            <div class="form-row"><span class="form-label">(30) 課税される所得金額</span></div>
+            <div class="form-row"><span class="form-label">(31) 上の(30)に対する税額</span></div>
+            <div class="form-row" style="color:var(--text-muted)"><span class="form-label">　　  …税額控除など…</span></div>
+            <div class="form-row" style="margin-top:0.3rem;padding-top:0.3rem;border-top:1px dashed #ccc">
+              <span class="form-label" style="color:var(--red);font-weight:700">(48) 源泉徴収税額</span>
+              <span class="form-source src-red">重要!</span>
+            </div>
+            <div class="form-row" style="font-size:0.68rem;color:var(--text-muted)"><span>※ 入れ忘れると二重課税に</span></div>
+            <div class="form-row" style="margin-top:0.3rem;padding-top:0.3rem;border-top:1px dashed #ccc">
+              <span class="form-label" style="font-weight:700">(51) 納付する税額</span>
+            </div>
+            <div class="form-row">
+              <span class="form-label" style="font-weight:700">(52) 還付される税額</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-illust-footer">
+      ★ <strong>給与収入</strong>がある人 → <strong>オ欄</strong>に源泉徴収票の金額を転記<br>
+      ★ <strong>業務委託収入</strong> → <strong>ア欄（事業）</strong>または<strong>カ欄（雑・業務）</strong>に支払調書の金額を入力<br>
+      ※ 入力する欄が違うので注意！両方ある場合はそれぞれ入力します
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--orange-light);border-left:4px solid var(--orange)">
+    <p style="font-size:0.88rem;line-height:1.8">
+      ⚠️ <strong>「経費」と「所得控除」は別物！</strong><br>
+      どちらも税金を減らしてくれますが、引く場所が違います。この違いを知っておくだけで、申告ミスがぐっと減ります👇
+    </p>
+    <table class="diff-table" style="margin-top:0.8rem">
+      <tr><th></th><th>🟢 経費</th><th>🔵 所得控除</th></tr>
+      <tr><td>何から引く？</td><td>売上（収入）</td><td>所得（利益）</td></tr>
+      <tr><td>入力場所</td><td>収支内訳書</td><td>申告書の控除欄</td></tr>
+      <tr><td>代表例</td><td>PC、通信費、家賃按分</td><td>社会保険、国保、iDeCo</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ===== SECTION: 準備するものチェックリスト ===== -->
+<section id="prep" class="fade-up">
+  <div class="section-title">📦 準備するものチェックリスト</div>
+  <div class="section-sub">申告前にこれだけ揃えておけばスムーズ！</div>
+
+  <div class="prep-card">
+    <div class="prep-header">
+      <h3>📋 準備リスト</h3>
+      <button class="prep-dl-btn" onclick="downloadPrepList()">🖨️ 印刷 / PDF保存</button>
+    </div>
+
+    <div class="prep-progress">
+      <div class="prep-progress-bar"><div class="prep-progress-fill" id="prepProgressFill" style="width:0%"></div></div>
+      <div class="prep-progress-text" id="prepProgressText">0 / 13 準備OK</div>
+    </div>
+
+    <div class="prep-category">🪪 本人確認</div>
+    <div class="prep-item" onclick="togglePrep(this)">
+      <div class="prep-box"></div>
+      <div><div class="prep-name">マイナンバーカード</div><div class="prep-desc">e-Tax送信に必要。なければ通知カード＋運転免許証等でもOK</div></div>
+    </div>
+
+    <div class="prep-category">💰 収入がわかるもの（STEP 1 に使う）</div>
+    <div class="prep-item" onclick="togglePrep(this)">
+      <div class="prep-box"></div>
+      <div><div class="prep-name">支払調書</div><div class="prep-desc">取引先から届く書類。届かない場合もあるので、なくても問題なし</div></div>
+    </div>
+    <div class="prep-item" onclick="togglePrep(this)">
+      <div class="prep-box"></div>
+      <div><div class="prep-name">請求書の控え / 売上の記録</div><div class="prep-desc">自分が発行した請求書や、売上管理表など。年間合計がわかればOK</div></div>
+    </div>
+    <div class="prep-item" onclick="togglePrep(this)">
+      <div class="prep-box"></div>
+      <div><div class="prep-name">銀行口座の入金明細</div><div class="prep-desc">通帳やネットバンキングの明細。振込額と源泉税の確認に使う</div></div>
+    </div>
+
+    <div class="prep-category">🏦 源泉徴収がわかるもの（STEP 2 に使う）</div>
+    <div class="prep-item" onclick="togglePrep(this)">
+      <div class="prep-box"></div>
+      <div><div class="prep-name">支払調書 or 源泉税の計算メモ</div><div class="prep-desc">支払調書の「源泉徴収税額」欄を確認。なければ入金額から逆算</div></div>
+    </div>
+
+    <div class="prep-category">🖥️ 経費がわかるもの（STEP 3 に使う）</div>
+    <div class="prep-item" onclick="togglePrep(this)">
+      <div class="prep-box"></div>
+      <div><div class="prep-name">領収書・レシート</div><div class="prep-desc">PC、ソフトウェア、書籍、交通費、打合せ費用など</div></div>
+    </div>
+    <div class="prep-item" onclick="togglePrep(this)">
+      <div class="prep-box"></div>
+      <div><div class="prep-name">クレジットカード・サブスク明細</div><div class="prep-desc">Adobe、GitHub、サーバー代など月額課金の証拠書類</div></div>
+    </div>
+    <div class="prep-item" onclick="togglePrep(this)">
+      <div class="prep-box"></div>
+      <div><div class="prep-name">家賃の契約書・光熱費の明細</div><div class="prep-desc">家事按分する場合に必要。面積や使用時間の割合メモも用意</div></div>
+    </div>
+
+    <div class="prep-category">🛡️ 所得控除に使うもの（STEP 4 に使う）</div>
+    <div class="prep-item" onclick="togglePrep(this)">
+      <div class="prep-box"></div>
+      <div><div class="prep-name">国民健康保険の納付額</div><div class="prep-desc">市区町村から届く納付額通知、または口座振替の記録</div></div>
+    </div>
+    <div class="prep-item" onclick="togglePrep(this)">
+      <div class="prep-box"></div>
+      <div><div class="prep-name">国民年金の控除証明書</div><div class="prep-desc">日本年金機構から届くハガキ（10〜11月頃に届く）</div></div>
+    </div>
+    <div class="prep-item" onclick="togglePrep(this)">
+      <div class="prep-box"></div>
+      <div><div class="prep-name">生命保険・iDeCoの控除証明書</div><div class="prep-desc">各保険会社・証券会社から届く（該当がある場合のみ）</div></div>
+    </div>
+    <div class="prep-item" onclick="togglePrep(this)">
+      <div class="prep-box"></div>
+      <div><div class="prep-name">ふるさと納税の寄附金受領証明書</div><div class="prep-desc">各自治体 or ポータルサイトから届く（該当がある場合のみ）</div></div>
+    </div>
+
+    <div class="prep-category">🏧 その他</div>
+    <div class="prep-item" onclick="togglePrep(this)">
+      <div class="prep-box"></div>
+      <div><div class="prep-name">還付金の振込先口座</div><div class="prep-desc">本人名義の銀行口座。還付がある場合に必要</div></div>
+    </div>
+
+    <div class="prep-tip">
+      💡 <strong>ヒント：</strong>控除証明書は10〜11月に届くものが多いので、届いたら1箇所にまとめておくのがおすすめ。確定申告用の封筒やクリアファイルを用意しておくと安心です。
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION: CHECKLIST ===== -->
+<section id="checklist" class="fade-up">
+  <div class="section-title">✅ 4ステップ チェックリスト</div>
+  <div class="section-sub">タップして完了していこう！</div>
+
+  <div class="card" style="padding:0.8rem 0">
+    <div class="progress-bar" style="margin:0 1.2rem"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <div class="progress-text" style="padding:0 1.2rem" id="progressText">0 / 4 完了</div>
+
+    <div class="step-item" onclick="toggleStep(this)" data-step="1">
+      <div class="step-check"></div>
+      <div>
+        <div class="step-num">STEP 1</div>
+        <div class="step-title">💰 収入を入力する</div>
+        <div class="step-desc">支払調書や請求書をもとに、1年間の売上合計を入力。複数社ある場合は合算。<strong>振込額ではなく「税引前の総額」</strong>を入れるのがポイント！</div>
+        <div class="step-docs">
+          <div class="step-docs-label">📎 必要な書類</div>
+          <div class="step-docs-list">
+            <span class="doc-tag">支払調書</span>
+            <span class="doc-tag">請求書の控え / 売上の記録</span>
+            <span class="doc-tag">銀行口座の入金明細</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-item" onclick="toggleStep(this)" data-step="2">
+      <div class="step-check"></div>
+      <div>
+        <div class="step-num">STEP 2</div>
+        <div class="step-title">🏦 源泉徴収税を入力する</div>
+        <div class="step-desc">報酬から天引きされた源泉所得税を必ず入力。支払調書の「源泉徴収税額」を確認。</div>
+        <div class="step-warn">⚠️ 入れ忘れると二重課税になります！</div>
+        <div class="step-docs">
+          <div class="step-docs-label">📎 必要な書類</div>
+          <div class="step-docs-list">
+            <span class="doc-tag">支払調書</span>
+            <span class="doc-tag">源泉税の計算メモ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-item" onclick="toggleStep(this)" data-step="3">
+      <div class="step-check"></div>
+      <div>
+        <div class="step-num">STEP 3</div>
+        <div class="step-title">🖥️ 経費を計上する</div>
+        <div class="step-desc">仕事のために使ったお金を経費として計上。入れないと税金を多く払うことに！下の経費クイズもチェック👇</div>
+        <div class="step-docs">
+          <div class="step-docs-label">📎 必要な書類</div>
+          <div class="step-docs-list">
+            <span class="doc-tag">領収書・レシート</span>
+            <span class="doc-tag">クレジットカード・サブスク明細</span>
+            <span class="doc-tag">家賃の契約書・光熱費の明細</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-item" onclick="toggleStep(this)" data-step="4">
+      <div class="step-check"></div>
+      <div>
+        <div class="step-num">STEP 4</div>
+        <div class="step-title">🛡️ 所得控除を入力する</div>
+        <div class="step-desc">国民健康保険、国民年金、iDeCo、生命保険料控除、基礎控除（48万円）、ふるさと納税（寄附金控除）など。経費とは別の欄で入力。</div>
+        <div class="step-docs">
+          <div class="step-docs-label">📎 必要な書類</div>
+          <div class="step-docs-list">
+            <span class="doc-tag">国保の納付額通知</span>
+            <span class="doc-tag">国民年金の控除証明書</span>
+            <span class="doc-tag">生命保険・iDeCoの控除証明書</span>
+            <span class="doc-tag">ふるさと納税の受領証明書</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION: EXPENSE TABLE + QUIZ ===== -->
+<section id="quiz" class="fade-up">
+  <div class="section-title">🧠 経費の ○ × クイズ</div>
+  <div class="section-sub">タップして正解を確認しよう！</div>
+
+  <!-- 3-column expense reference table -->
+  <div class="card expense-section" style="padding:0;overflow:hidden;margin-bottom:1.5rem">
+    <div class="expense-header">
+      <div class="col-green">🟢 経費</div>
+      <div class="col-blue">🔵 所得控除</div>
+      <div class="col-red">🔴 どちらでもない</div>
+    </div>
+    <div class="expense-columns">
+      <div class="expense-column">
+        <div class="expense-item"><span class="emoji">💻</span> PC・モニター・周辺機器</div>
+        <div class="expense-item"><span class="emoji">🪑</span> デスク・椅子（仕事用）</div>
+        <div class="expense-item"><span class="emoji">📱</span> ソフトウェア・サブスク</div>
+        <div class="expense-item"><span class="emoji">📚</span> 書籍・セミナー・研修費</div>
+        <div class="expense-item"><span class="emoji">🚃</span> 交通費（打合せ・出張）</div>
+        <div class="expense-item"><span class="emoji">📡</span> 通信費（ネット・携帯按分）</div>
+        <div class="expense-item"><span class="emoji">🏠</span> 家賃・光熱費（按分）</div>
+        <div class="expense-item"><span class="emoji">☕</span> コワーキングスペース代</div>
+      </div>
+      <div class="expense-column">
+        <div class="expense-item"><span class="emoji">🏥</span> 国民健康保険料</div>
+        <div class="expense-item"><span class="emoji">🏛️</span> 国民年金</div>
+        <div class="expense-item"><span class="emoji">💊</span> 生命保険料</div>
+        <div class="expense-item"><span class="emoji">🏦</span> iDeCo</div>
+        <div class="expense-item"><span class="emoji">🎁</span> ふるさと納税</div>
+        <div class="expense-item"><span class="emoji">🏥</span> 医療費</div>
+      </div>
+      <div class="expense-column">
+        <div class="expense-item"><span class="emoji">🍽️</span> プライベートの食事</div>
+        <div class="expense-item"><span class="emoji">👔</span> スーツ・普段着</div>
+        <div class="expense-item"><span class="emoji">🏛️</span> 住民税・所得税</div>
+        <div class="expense-item"><span class="emoji">🚨</span> 罰金・反則金</div>
+        <div class="expense-item"><span class="emoji">👨‍👩‍👧</span> 届出なしの家族給与</div>
+      </div>
+    </div>
+    <div class="expense-note">
+      ★ 家賃・通信費は<strong>「家事按分」</strong>で業務使用割合だけ計上OK。例：家賃10万円で仕事部屋25%使用 → 月2.5万円が経費<br>
+      ★ 🔵所得控除は経費ではなく、確定申告書の<strong>控除欄</strong>で入力します（引く場所が違う！）
+    </div>
+  </div>
+
+  <!-- Quiz -->
+  <div style="display:flex;flex-direction:column;gap:0.6rem" id="quizArea">
+    <div class="card quiz-card" onclick="toggleQuiz(this)">
+      <div class="quiz-q">
+        <span class="quiz-emoji">❓</span>
+        <span class="quiz-text">仕事用に買った4万円の椅子は経費？</span>
+        <span class="quiz-tap">タップ</span>
+      </div>
+      <div class="quiz-a">
+        <span class="quiz-result ok">🟢 経費OK！</span>
+        <p>仕事で使う家具は経費になります。10万円未満なら一括で経費に。10万円以上は減価償却が必要です。</p>
+      </div>
+    </div>
+
+    <div class="card quiz-card" onclick="toggleQuiz(this)">
+      <div class="quiz-q">
+        <span class="quiz-emoji">❓</span>
+        <span class="quiz-text">国民健康保険料は経費に入れる？</span>
+        <span class="quiz-tap">タップ</span>
+      </div>
+      <div class="quiz-a">
+        <span class="quiz-result deduction">🔵 経費ではなく「所得控除」！</span>
+        <p>国保は<strong>「社会保険料控除」（所得控除）</strong>として申告書の別の欄で入力します。効果は似ていますが、入力場所が違います。経費欄に書かないよう注意！</p>
+      </div>
+    </div>
+
+    <div class="card quiz-card" onclick="toggleQuiz(this)">
+      <div class="quiz-q">
+        <span class="quiz-emoji">❓</span>
+        <span class="quiz-text">打ち合わせのカフェ代は経費？</span>
+        <span class="quiz-tap">タップ</span>
+      </div>
+      <div class="quiz-a">
+        <span class="quiz-result ok">🟢 経費OK！</span>
+        <p>クライアントとの打ち合わせで使ったカフェ代は「会議費」として経費になります。ただし1人で趣味で行くカフェはNG。</p>
+      </div>
+    </div>
+
+    <div class="card quiz-card" onclick="toggleQuiz(this)">
+      <div class="quiz-q">
+        <span class="quiz-emoji">❓</span>
+        <span class="quiz-text">仕事で使うスーツは経費？</span>
+        <span class="quiz-tap">タップ</span>
+      </div>
+      <div class="quiz-a">
+        <span class="quiz-result ng">🔴 原則NG</span>
+        <p>スーツや普段着は「プライベートでも着られる」ため、原則として経費にできません。特殊な作業着や制服は例外です。</p>
+      </div>
+    </div>
+
+    <div class="card quiz-card" onclick="toggleQuiz(this)">
+      <div class="quiz-q">
+        <span class="quiz-emoji">❓</span>
+        <span class="quiz-text">自宅の家賃は全額経費にできる？</span>
+        <span class="quiz-tap">タップ</span>
+      </div>
+      <div class="quiz-a">
+        <span class="quiz-result partial">△ 一部だけOK</span>
+        <p>自宅兼事務所の場合、<strong>仕事で使っている割合（面積 or 時間）</strong>だけ「家事按分」として計上できます。全額はNGです。</p>
+      </div>
+    </div>
+
+    <div class="card quiz-card" onclick="toggleQuiz(this)">
+      <div class="quiz-q">
+        <span class="quiz-emoji">❓</span>
+        <span class="quiz-text">ふるさと納税は経費？</span>
+        <span class="quiz-tap">タップ</span>
+      </div>
+      <div class="quiz-a">
+        <span class="quiz-result deduction">🔵 経費ではなく「所得控除」！</span>
+        <p>ふるさと納税は<strong>「寄附金控除」（所得控除）</strong>です。確定申告書の控除欄で入力します。ワンストップ特例を使っていた人も、確定申告する場合は改めて申告が必要です。</p>
+      </div>
+    </div>
+
+    <div class="card quiz-card" onclick="toggleQuiz(this)">
+      <div class="quiz-q">
+        <span class="quiz-emoji">❓</span>
+        <span class="quiz-text">Adobe CCやGitHubなどのサブスク代は？</span>
+        <span class="quiz-tap">タップ</span>
+      </div>
+      <div class="quiz-a">
+        <span class="quiz-result ok">🟢 経費OK！</span>
+        <p>仕事で使うソフトウェア・クラウドサービスの月額料金は全額経費にできます。プライベート兼用の場合は按分。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== SECTION: E-TAX GUIDE ===== -->
+<section id="etax" class="fade-up">
+  <div class="section-title">🖥 確定申告書等作成コーナーの使い方</div>
+  <div class="section-sub">国税庁のWebサイト（PC版）で無料で申告書が作れます</div>
+
+  <div class="card">
+    <div class="etax-steps">
+      <div class="etax-step">
+        <div class="etax-num">1</div>
+        <div class="etax-text">
+          <strong>サイトにアクセスして「作成開始」</strong>をクリック。提出方法は<strong>「e-Tax（マイナンバーカード方式）」</strong>がおすすめ。印刷して郵送も可。
+        </div>
+      </div>
+      <div class="etax-step">
+        <div class="etax-num">2</div>
+        <div class="etax-text">
+          <strong>「所得税」</strong>を選択。次に<strong>「収支内訳書も一緒に作成しますか？」</strong>と聞かれるので「はい」を選ぶと、経費の入力画面が出てきます。
+          <div class="etax-tip">💡 収支内訳書 = 経費の明細を書く書類</div>
+        </div>
+      </div>
+      <div class="etax-step">
+        <div class="etax-num">3</div>
+        <div class="etax-text">
+          <strong>収入の入力</strong>：所得の種類を選びます。<br>
+          ・業務委託 → <strong>「事業所得」</strong>または<strong>「雑所得（業務）」</strong>を選択し、支払調書の金額・源泉徴収税額・経費を入力<br>
+          ・給与もある場合 → <strong>「給与所得」</strong>も追加して、源泉徴収票の内容を転記
+          <div class="etax-tip">💡 事業所得と雑所得（業務）の違い：継続的に事業として行っている場合は事業所得。副業程度なら雑所得が一般的</div>
+        </div>
+      </div>
+      <div class="etax-step">
+        <div class="etax-num">4</div>
+        <div class="etax-text">
+          <strong>所得控除の入力</strong>：社会保険料（国保・年金）、生命保険料、ふるさと納税（寄附金控除）などを順番に入力していきます。該当するものだけでOK。
+        </div>
+      </div>
+      <div class="etax-step">
+        <div class="etax-num">5</div>
+        <div class="etax-text">
+          <strong>計算結果の確認</strong>：入力が終わると、自動で納付額または還付額が表示されます。還付がある場合は振込先口座を入力。
+        </div>
+      </div>
+      <div class="etax-step">
+        <div class="etax-num">6</div>
+        <div class="etax-text">
+          <strong>送信 or 印刷</strong>：e-Taxならそのまま送信。マイナンバーカードをPCにかざして完了。印刷派は PDF を保存して税務署に郵送でもOK。
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:1.2rem">
+      <a class="etax-link" href="https://www.keisan.nta.go.jp/kyoutu/ky/sm/top" target="_blank" rel="noopener">
+        🖥 確定申告書等作成コーナーを開く ↗
+      </a>
+    </div>
+    <p style="font-size:0.75rem;color:var(--text-muted);text-align:center;margin-top:0.6rem">
+      ※ 国税庁の公式サイトに移動します（無料）
+    </p>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>※ 本サイトは一般的な概要をまとめたものです。個別のケースについては税理士等の専門家にご相談ください。</p>
+  <p style="margin-top:0.3rem">2025年分確定申告（2026年2〜3月申告）向け</p>
+</div>
+
+<script>
+// === Prep Checklist ===
+function togglePrep(el) {
+  el.classList.toggle('checked');
+  const box = el.querySelector('.prep-box');
+  box.textContent = el.classList.contains('checked') ? '✓' : '';
+  updatePrepProgress();
+}
+function updatePrepProgress() {
+  const total = document.querySelectorAll('.prep-item').length;
+  const done = document.querySelectorAll('.prep-item.checked').length;
+  const pct = (done / total) * 100;
+  document.getElementById('prepProgressFill').style.width = pct + '%';
+  document.getElementById('prepProgressText').textContent = done + ' / ' + total + ' 準備OK' + (done === total ? ' 🎉 完璧！' : '');
+}
+function downloadPrepList() {
+  window.print();
+}
+
+// === Checklist ===
+function toggleStep(el) {
+  el.classList.toggle('done');
+  const check = el.querySelector('.step-check');
+  check.textContent = el.classList.contains('done') ? '✓' : '';
+  updateProgress();
+}
+function updateProgress() {
+  const total = document.querySelectorAll('.step-item').length;
+  const done = document.querySelectorAll('.step-item.done').length;
+  const pct = (done / total) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressText').textContent = done + ' / ' + total + ' 完了' + (done === total ? ' 🎉' : '');
+}
+
+// === Quiz ===
+function toggleQuiz(el) {
+  el.classList.toggle('open');
+  const tap = el.querySelector('.quiz-tap');
+  if (tap) tap.textContent = el.classList.contains('open') ? '閉じる' : 'タップ';
+}
+
+
+// === Scroll Animation ===
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
