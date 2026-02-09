@@ -619,6 +619,20 @@ section{padding:2rem 0}
   padding:0.8rem 1rem;font-size:0.85rem;line-height:1.7;margin-top:0.8rem;
 }
 
+/* ===== ETAX TABS ===== */
+.etax-tabs{
+  display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:1rem;
+}
+.etax-tab{
+  padding:0.7rem 0.5rem;border:2px solid #e0e0e0;border-radius:var(--radius-sm);
+  background:var(--card);cursor:pointer;font-family:var(--font-body);
+  font-size:0.88rem;font-weight:700;color:var(--text-light);
+  transition:all 0.2s;text-align:center;
+}
+.etax-tab:hover{border-color:var(--navy)}
+.etax-tab.active{border-color:var(--blue);background:var(--blue-light);color:var(--blue)}
+.etax-tab:first-child.active{border-color:var(--green);background:var(--green-light);color:var(--green)}
+
 /* ===== ANIMATION ON SCROLL ===== */
 .fade-up{opacity:0;transform:translateY(20px);transition:all 0.6s ease}
 .fade-up.visible{opacity:1;transform:translateY(0)}
@@ -644,7 +658,7 @@ section{padding:2rem 0}
   <a class="nav-pill" href="#checklist">✅ チェックリスト</a>
   <a class="nav-pill" href="#quiz">🧠 経費クイズ</a>
   <a class="nav-pill" href="#mistakes">⚠️ 失敗集</a>
-  <a class="nav-pill" href="#bookkeeping">📒 収支内訳書</a>
+  <a class="nav-pill" href="#bookkeeping">📒 決算書</a>
   <a class="nav-pill" href="#tools">🔧 ツール</a>
   <a class="nav-pill" href="#etax">🖥 作成コーナー</a>
 </nav>
@@ -821,30 +835,48 @@ section{padding:2rem 0}
     </div>
   </div>
 
-  <!-- 事業所得 vs 雑所得 -->
-  <div class="card" style="padding:1rem">
-    <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1rem;margin-bottom:0.5rem">🤔 事業所得 と 雑所得、どっち？</h3>
-    <p style="font-size:0.82rem;color:var(--text-light);margin-bottom:0.5rem">業務委託の収入はどちらかで申告します。迷ったら下の目安を参考に。</p>
-    <div class="glossary-vs">
+  <!-- 事業所得 vs 雑所得：かんたん判定 -->
+  <div class="card" style="padding:1.2rem">
+    <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.1rem;margin-bottom:0.8rem">🤔 「事業所得」と「雑所得」、どっちで出す？</h3>
+
+    <div style="background:var(--bg2);border-radius:var(--radius-sm);padding:0.8rem 1rem;margin-bottom:1rem;font-size:0.88rem;line-height:1.8">
+      業務委託の収入は<strong>「事業所得」か「雑所得」</strong>のどちらかで申告します。<br>
+      <strong>どちらでも経費は引けるし、税金の計算は同じ。</strong><br>
+      違うのは「決算書（横長の紙）を作るかどうか」だけ。
+    </div>
+
+    <div style="font-size:0.9rem;line-height:2;margin-bottom:0.8rem">
+      <div style="padding:0.4rem 0.6rem;background:var(--blue-light);border-radius:8px;margin-bottom:0.4rem">
+        👉 <strong>青色申告じゃない人（白色 or よくわからない人）</strong><br>
+        → <strong style="color:var(--blue)">「雑所得」が楽。</strong>決算書が不要で、申告書に直接書くだけ。
+      </div>
+      <div style="padding:0.4rem 0.6rem;background:var(--green-light);border-radius:8px;margin-bottom:0.4rem">
+        👉 <strong>青色申告の届出を出している人</strong><br>
+        → <strong style="color:var(--green)">「事業所得」</strong>でやろう。10万〜65万円の青色控除が使える。
+      </div>
+      <div style="padding:0.4rem 0.6rem;background:var(--orange-light);border-radius:8px">
+        👉 <strong>白か青かわからない人</strong><br>
+        → まずは<strong style="color:var(--orange)">「雑所得」でOK。</strong>経費も引ける、実質白色の事業所得と変わらない。
+      </div>
+    </div>
+
+    <div class="glossary-vs" style="margin:1rem 0 0.5rem">
       <div class="glossary-vs-item" style="background:var(--green-light)">
         <strong style="color:var(--green)">事業所得</strong><br>
-        ・継続的に事業として行っている<br>
-        ・本業として生計を立てている<br>
-        ・青色申告で控除が使える<br>
-        <span style="font-size:0.75rem;color:var(--text-muted)">→ 収支内訳書 or 青色決算書を作成</span>
+        ・決算書（横長の紙）を作る<br>
+        ・その後に申告書（縦長の紙）<br>
+        ・青色なら特別控除あり<br>
+        <span style="font-size:0.75rem;color:var(--text-muted)">→ 下の「📒 決算書」セクションから</span>
       </div>
       <div class="glossary-vs-divider">vs</div>
       <div class="glossary-vs-item" style="background:var(--blue-light)">
         <strong style="color:var(--blue)">雑所得（業務）</strong><br>
-        ・副業程度・単発の仕事<br>
-        ・会社員が副業として受けている<br>
-        ・青色申告は使えない<br>
-        <span style="font-size:0.75rem;color:var(--text-muted)">→ 申告書の雑所得欄に直接記入</span>
+        ・決算書は不要<br>
+        ・申告書（縦長の紙）だけでOK<br>
+        ・経費も引ける、白色と実質同じ<br>
+        <span style="font-size:0.75rem;color:var(--text-muted)">→ 「🖥 作成コーナー」まで飛ばしてOK</span>
       </div>
     </div>
-    <p style="font-size:0.78rem;color:var(--text-muted);line-height:1.6">
-      ※ どちらにするかは明確な基準がなく、実態で判断します。本業フリーランスなら基本は<strong>事業所得</strong>でOK。
-    </p>
   </div>
 </section>
 
@@ -1221,16 +1253,37 @@ section{padding:2rem 0}
   </div>
 </section>
 
-<!-- ===== SECTION: 決算書（収支内訳書）===== -->
+<!-- ===== SECTION: 決算書（事業所得の人向け）===== -->
 <section id="bookkeeping" class="fade-up">
-  <div class="section-title">📒 収支内訳書ってなに？</div>
-  <div class="section-sub">業務委託の人は確定申告書と一緒にこれも作ります</div>
+  <div class="section-title">📒 決算書を作ろう（事業所得の人）</div>
+  <div class="section-sub">申告書（縦長の紙）の前に、まずこの横長の紙を仕上げます</div>
+
+  <div class="card" style="background:var(--orange-light);border-left:4px solid var(--orange);padding:0.8rem 1rem;margin-bottom:1rem">
+    <p style="font-size:0.85rem;line-height:1.7">
+      ⚠️ <strong>「雑所得」で申告する人はこのセクションは飛ばしてOK</strong>。下の「🖥 作成コーナー」へ進んでください。<br>
+      <span style="font-size:0.8rem;color:var(--text-muted)">事業所得の人だけが決算書（収支内訳書 or 青色申告決算書）を作ります。</span>
+    </p>
+  </div>
+
+  <!-- 書類の流れ（横長→縦長）-->
+  <div class="card" style="text-align:center;padding:1rem">
+    <div style="display:flex;align-items:center;justify-content:center;gap:0.8rem;flex-wrap:wrap;margin-bottom:0.8rem">
+      <div style="padding:0.6rem 1.2rem;background:var(--green-light);border:2px solid var(--green);border-radius:var(--radius-sm);font-weight:700;color:var(--green)">
+        📄 決算書<br><span style="font-size:0.75rem;font-weight:400">（横長の紙）</span>
+      </div>
+      <span style="font-size:1.5rem;color:var(--text-muted)">→</span>
+      <div style="padding:0.6rem 1.2rem;background:var(--blue-light);border:2px solid var(--blue);border-radius:var(--radius-sm);font-weight:700;color:var(--blue)">
+        📋 申告書<br><span style="font-size:0.75rem;font-weight:400">（縦長の紙）</span>
+      </div>
+    </div>
+    <p style="font-size:0.8rem;color:var(--text-light)">まず決算書で収入と経費をまとめてから、申告書で税金を計算します</p>
+  </div>
 
   <div class="card">
-    <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.05rem;margin-bottom:0.5rem">💡 ひとことで言うと</h3>
-    <p style="font-size:0.88rem;line-height:1.8">
-      1年間の<strong>売上（収入）</strong>と<strong>経費（支出）</strong>を項目別にまとめた書類です。<br>
-      確定申告書等作成コーナーで「収支内訳書も一緒に作る」を選ぶと、入力画面が出てきます。
+    <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.05rem;margin-bottom:0.5rem">💡 決算書に書くこと</h3>
+    <p style="font-size:0.88rem;line-height:1.8;margin-bottom:0.5rem">
+      1年間の<strong>売上（収入）</strong>と<strong>経費（支出）</strong>を項目別にまとめます。<br>
+      作成コーナーで「収支内訳書も一緒に作る」を選ぶと入力画面が出てきます。
     </p>
 
     <table class="bookkeeping-table">
@@ -1247,7 +1300,7 @@ section{padding:2rem 0}
 
     <div class="bookkeeping-memo">
       <strong>📝 帳簿って難しくないの？</strong><br>
-      本来は収入と支出を記帳する義務がありますが、白色申告の場合は<strong>お小遣い帳レベル</strong>でOK。<br>
+      白色申告の場合は<strong>お小遣い帳レベル</strong>でOK。<br>
       「いつ・いくら・何に使ったか」がわかればそれで十分です。<br>
       ノートでもExcelでもスマホのメモでも大丈夫。
     </div>
@@ -1256,7 +1309,7 @@ section{padding:2rem 0}
   <div class="card" style="background:var(--blue-light);border-left:4px solid var(--blue)">
     <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1rem;margin-bottom:0.5rem">🔵 青色申告の人へ</h3>
     <p style="font-size:0.85rem;line-height:1.8">
-      青色申告承認申請を出している人は「収支内訳書」ではなく<strong>「青色申告決算書」</strong>を作ります。<br>
+      青色の人は「収支内訳書」ではなく<strong>「青色申告決算書」</strong>を作ります。<br>
       内容はほぼ同じですが、簡易簿記でも<strong>10万円の青色申告特別控除</strong>が受けられます。<br>
       <span style="font-size:0.8rem;color:var(--text-light)">※ 複式簿記＋e-Taxなら最大65万円控除。来年から青色にしたい場合は、3月15日までに「青色申告承認申請書」を提出。</span>
     </p>
@@ -1438,7 +1491,17 @@ section{padding:2rem 0}
   <div class="section-title">🖥 確定申告書等作成コーナーの使い方</div>
   <div class="section-sub">国税庁のWebサイト（PC版）で無料で申告書が作れます</div>
 
-  <div class="card">
+  <!-- タブ切替 -->
+  <div class="etax-tabs">
+    <button class="etax-tab active" onclick="switchEtaxRoute('business')">📒 事業所得ルート<br><span style="font-size:0.7rem;font-weight:400">決算書 → 申告書</span></button>
+    <button class="etax-tab" onclick="switchEtaxRoute('misc')">📋 雑所得ルート<br><span style="font-size:0.7rem;font-weight:400">申告書のみ</span></button>
+  </div>
+
+  <!-- 事業所得ルート -->
+  <div class="card etax-route" id="etaxBusiness">
+    <div style="background:var(--green-light);padding:0.5rem 0.8rem;border-radius:8px;font-size:0.82rem;margin-bottom:1rem;font-weight:700;color:var(--green)">
+      📒 事業所得の人：決算書（横長の紙）→ 申告書（縦長の紙）の順で作ります
+    </div>
     <div class="etax-steps">
       <div class="etax-step">
         <div class="etax-num">1</div>
@@ -1449,48 +1512,96 @@ section{padding:2rem 0}
       <div class="etax-step">
         <div class="etax-num">2</div>
         <div class="etax-text">
-          <strong>「所得税」</strong>を選択。次に<strong>「収支内訳書も一緒に作成しますか？」</strong>と聞かれるので「はい」を選ぶと、経費の入力画面が出てきます。
-          <div class="etax-tip">💡 収支内訳書 = 経費の明細を書く書類</div>
+          <strong>「所得税」</strong>を選択。<strong>「決算書・収支内訳書も一緒に作成しますか？」→「はい」</strong>を選ぶ。
+          <div class="etax-tip">💡 青色の人は「青色申告決算書」、白色の人は「収支内訳書」が出てきます</div>
         </div>
       </div>
       <div class="etax-step">
-        <div class="etax-num">3</div>
+        <div class="etax-num" style="background:var(--green)">3</div>
         <div class="etax-text">
-          <strong>収入の入力</strong>：所得の種類を選びます。<br>
-          ・業務委託 → <strong>「事業所得」</strong>または<strong>「雑所得（業務）」</strong>を選択し、支払調書の金額・源泉徴収税額・経費を入力<br>
-          ・給与もある場合 → <strong>「給与所得」</strong>も追加して、源泉徴収票の内容を転記
-          <div class="etax-tip">💡 事業所得と雑所得（業務）の違い：継続的に事業として行っている場合は事業所得。副業程度なら雑所得が一般的</div>
+          <strong>決算書の入力</strong>（← 横長の紙）<br>
+          収入金額（売上合計）と、経費を項目別（交通費・消耗品費・通信費など）に入力します。
+          <div class="etax-tip">💡 上の「📒 決算書」セクションの表を見ながら入力しよう</div>
         </div>
       </div>
       <div class="etax-step">
-        <div class="etax-num">4</div>
+        <div class="etax-num" style="background:var(--blue)">4</div>
         <div class="etax-text">
-          <strong>所得控除の入力</strong>：社会保険料（国保・年金）、生命保険料、ふるさと納税（寄附金控除）などを順番に入力していきます。該当するものだけでOK。
+          <strong>申告書の入力</strong>（← 縦長の紙）<br>
+          決算書が終わると申告書に移ります。給与がある場合は<strong>「給与所得」</strong>も追加して源泉徴収票を転記。<strong>所得控除</strong>（国保・年金・ふるさと納税など）を入力。<strong>源泉徴収税額</strong>も忘れずに。
         </div>
       </div>
       <div class="etax-step">
         <div class="etax-num">5</div>
         <div class="etax-text">
-          <strong>計算結果の確認</strong>：入力が終わると、自動で納付額または還付額が表示されます。還付がある場合は振込先口座を入力。
+          <strong>計算結果の確認</strong>：自動で納付額または還付額が表示されます。還付がある場合は振込先口座を入力。
         </div>
       </div>
       <div class="etax-step">
         <div class="etax-num">6</div>
         <div class="etax-text">
-          <strong>送信 or 印刷</strong>：e-Taxならそのまま送信。マイナンバーカードをPCにかざして完了。印刷派は PDF を保存して税務署に郵送でもOK。
+          <strong>送信 or 印刷</strong>：e-Taxならそのまま送信。マイナンバーカードをPCにかざして完了。印刷派はPDFを保存して税務署に郵送でもOK。
         </div>
       </div>
     </div>
-
-    <div style="text-align:center;margin-top:1.2rem">
-      <a class="etax-link" href="https://www.keisan.nta.go.jp/kyoutu/ky/sm/top" target="_blank" rel="noopener">
-        🖥 確定申告書等作成コーナーを開く ↗
-      </a>
-    </div>
-    <p style="font-size:0.75rem;color:var(--text-muted);text-align:center;margin-top:0.6rem">
-      ※ 国税庁の公式サイトに移動します（無料）
-    </p>
   </div>
+
+  <!-- 雑所得ルート -->
+  <div class="card etax-route" id="etaxMisc" style="display:none">
+    <div style="background:var(--blue-light);padding:0.5rem 0.8rem;border-radius:8px;font-size:0.82rem;margin-bottom:1rem;font-weight:700;color:var(--blue)">
+      📋 雑所得の人：申告書（縦長の紙）だけでOK。決算書は不要です
+    </div>
+    <div class="etax-steps">
+      <div class="etax-step">
+        <div class="etax-num">1</div>
+        <div class="etax-text">
+          <strong>サイトにアクセスして「作成開始」</strong>をクリック。提出方法は<strong>「e-Tax（マイナンバーカード方式）」</strong>がおすすめ。印刷して郵送も可。
+        </div>
+      </div>
+      <div class="etax-step">
+        <div class="etax-num">2</div>
+        <div class="etax-text">
+          <strong>「所得税」</strong>を選択。<strong>「決算書・収支内訳書も一緒に作成しますか？」→「いいえ」</strong>を選ぶ。
+        </div>
+      </div>
+      <div class="etax-step">
+        <div class="etax-num" style="background:var(--blue)">3</div>
+        <div class="etax-text">
+          <strong>雑所得（業務）の入力</strong><br>
+          所得の種類で<strong>「雑所得（業務）」</strong>を選択。<strong>収入金額</strong>（税引前の総額）・<strong>必要経費</strong>・<strong>源泉徴収税額</strong>をまとめて入力します。<br>
+          給与がある場合は<strong>「給与所得」</strong>も追加して源泉徴収票を転記。
+          <div class="etax-tip">💡 経費は合計額でOK。項目別に分ける必要なし</div>
+        </div>
+      </div>
+      <div class="etax-step">
+        <div class="etax-num">4</div>
+        <div class="etax-text">
+          <strong>所得控除の入力</strong>：社会保険料（国保・年金）、生命保険料、ふるさと納税（寄附金控除）などを入力。該当するものだけでOK。
+        </div>
+      </div>
+      <div class="etax-step">
+        <div class="etax-num">5</div>
+        <div class="etax-text">
+          <strong>計算結果の確認</strong>：自動で納付額または還付額が表示されます。還付がある場合は振込先口座を入力。
+        </div>
+      </div>
+      <div class="etax-step">
+        <div class="etax-num">6</div>
+        <div class="etax-text">
+          <strong>送信 or 印刷</strong>：e-Taxならそのまま送信。マイナンバーカードをPCにかざして完了。印刷派はPDFを保存して税務署に郵送でもOK。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:1.2rem">
+    <a class="etax-link" href="https://www.keisan.nta.go.jp/kyoutu/ky/sm/top" target="_blank" rel="noopener">
+      🖥 確定申告書等作成コーナーを開く ↗
+    </a>
+  </div>
+  <p style="font-size:0.75rem;color:var(--text-muted);text-align:center;margin-top:0.6rem">
+    ※ 国税庁の公式サイトに移動します（無料）
+  </p>
 </section>
 
 </div><!-- /container -->
@@ -1561,6 +1672,15 @@ function saveStepState() {
   const done = [];
   items.forEach(function(item, i) { if (item.classList.contains('done')) done.push(i); });
   localStorage.setItem('taxguide-steps', JSON.stringify(done));
+}
+
+// === E-Tax Route Tabs ===
+function switchEtaxRoute(route) {
+  var tabs = document.querySelectorAll('.etax-tab');
+  tabs[0].classList.toggle('active', route === 'business');
+  tabs[1].classList.toggle('active', route === 'misc');
+  document.getElementById('etaxBusiness').style.display = route === 'business' ? '' : 'none';
+  document.getElementById('etaxMisc').style.display = route === 'misc' ? '' : 'none';
 }
 
 // === Quiz ===
