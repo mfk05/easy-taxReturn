@@ -34,7 +34,7 @@
   --font-display:'Zen Maru Gothic',sans-serif;
   --font-body:'M PLUS Rounded 1c',sans-serif;
 }
-html{scroll-behavior:smooth;font-size:17px}
+html{scroll-behavior:smooth;font-size:19px}
 body{
   font-family:var(--font-body);color:var(--text);
   background:var(--bg);
@@ -676,6 +676,10 @@ section{padding:2rem 0}
       会社員は会社がやってくれますが（年末調整）、
       <strong>業務委託のフリーランスは自分でやる必要があります。</strong>
     </p>
+    <p style="margin-top:0.6rem;background:var(--green-light);padding:0.5rem 0.8rem;border-radius:8px;font-size:0.95rem;line-height:1.8">
+      💰 ちなみに、<strong style="color:var(--green)">源泉徴収で先に税金を引かれている人は、払いすぎた分が戻ってくる</strong>ことが多いです。<br>
+      つまり確定申告は<strong style="color:var(--green)">実質「還付ゲーム」</strong>。怖がらずにやってみましょう！
+    </p>
   </div>
 
   <div class="card">
@@ -795,7 +799,25 @@ section{padding:2rem 0}
       違うのは「決算書（横長の紙）を作るかどうか」だけ。
     </div>
 
-    <div style="font-size:0.9rem;line-height:2;margin-bottom:0.8rem">
+    <div style="font-family:var(--font-display);font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:0.5rem">🙋 まず、あなたの状況は？</div>
+    <div style="font-size:0.95rem;line-height:2;margin-bottom:1rem">
+      <div style="padding:0.6rem 0.8rem;background:var(--blue-light);border-radius:8px;margin-bottom:0.5rem;border-left:4px solid var(--blue)">
+        👤 <strong>会社員・パート・学生で、副業として業務委託をしている人</strong><br>
+        → <strong style="color:var(--blue)">「雑所得」で出そう。</strong>シンプルで決算書も不要。申告書だけでOK。
+      </div>
+      <div style="padding:0.6rem 0.8rem;background:var(--green-light);border-radius:8px;margin-bottom:0.5rem;border-left:4px solid var(--green)">
+        💼 <strong>本業がフリーランス（業務委託がメイン収入）の人</strong><br>
+        → <strong style="color:var(--green)">「事業所得」で出そう。</strong>青色申告にすれば10万〜65万円の特別控除が使える！
+      </div>
+      <div style="padding:0.6rem 0.8rem;background:var(--orange-light);border-radius:8px;border-left:4px solid var(--orange)">
+        📝 <strong>本業フリーランスで、まだ白色申告の人へ</strong><br>
+        → 今年は白色でOK。でも<strong style="color:var(--orange)">来年に向けて「青色申告承認申請書」を3月15日までに出しておこう！</strong><br>
+        <span style="font-size:0.85rem;color:var(--text-light)">届出を出すだけで控除額が大幅アップ。届出は国税庁サイトから無料でできます。</span>
+      </div>
+    </div>
+
+    <div style="font-family:var(--font-display);font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:0.5rem">📋 青色 or 白色でも分岐する</div>
+    <div style="font-size:0.95rem;line-height:2;margin-bottom:0.8rem">
       <div style="padding:0.4rem 0.6rem;background:var(--blue-light);border-radius:8px;margin-bottom:0.4rem">
         👉 <strong>青色申告じゃない人（白色 or よくわからない人）</strong><br>
         → <strong style="color:var(--blue)">「雑所得」が楽。</strong>決算書が不要で、申告書に直接書くだけ。
@@ -983,7 +1005,7 @@ section{padding:2rem 0}
 <!-- ===== SECTION: FORM MAP ===== -->
 <section id="formmap" class="fade-up">
   <div class="section-title">📄 申告書のどこに何を書く？</div>
-  <div class="section-sub">確定申告書（第一表）の記入場所を確認しよう</div>
+  <div class="section-sub">提出前の最終チェックに使おう！記入漏れがないか確認できます</div>
 
   <div class="card" style="padding:0.8rem">
     <div class="form-map">
@@ -1055,11 +1077,11 @@ section{padding:2rem 0}
           <span class="form-legend-hint hint-orange">控除証明書を見ながら入力</span>
         </div>
       </div>
-      <div class="form-legend-item">
+      <div class="form-legend-item" style="border:2px solid #8B5CF6;background:rgba(139,92,246,0.06)">
         <div class="form-legend-num" style="background:#8B5CF6">6</div>
         <div class="form-legend-body">
-          <div class="form-legend-title">税金の計算</div>
-          <div class="form-legend-desc">すべての所得と控除から<strong>最終的な納税額 or 還付額</strong>が算出されます。源泉徴収税額の入力もここ。</div>
+          <div class="form-legend-title">税金の計算 <span style="background:var(--red);color:#fff;font-size:0.75rem;padding:0.1em 0.5em;border-radius:4px;margin-left:0.3rem">必ず確認！</span></div>
+          <div class="form-legend-desc">すべての所得と控除から<strong>最終的な納税額 or 還付額</strong>が算出されます。<br><strong style="color:var(--red)">特に「源泉徴収税額」の欄は絶対に確認しよう！</strong>ここに金額が入っていないと、先に天引きされた税金が戻ってきません。</div>
           <span class="form-legend-hint hint-purple">源泉徴収税を入れ忘れると還付が受けられない！</span>
         </div>
       </div>
